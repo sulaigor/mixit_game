@@ -1,0 +1,27 @@
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+@import "variables";
+
+body {
+  position: relative;
+  font-size: 100%;
+  //font-family: 'Cormorant Garamond', serif;
+  font-family: 'Trykker', serif;
+  max-width: 75%;
+  background: $main-bg;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Molle', cursive;
+  text-align: center;
+}
+
+a {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+@import "parts";
+@import "main";
+@import "components/banner";

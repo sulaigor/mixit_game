@@ -1,0 +1,42 @@
+.game-info {
+  top: 0;
+  left: 0;
+  min-height: 2em;
+  width: 100%;
+  padding: .5em .2em;
+
+  > * {
+    display: inline-block;
+    min-width: 11em;
+  }
+
+  h2 {
+    margin: 0 .5em;
+  }
+}
+
+.lives-wrapper {
+  > * {
+    display: inline-block;
+  }
+
+  .live {
+    width: .5em;
+    height: 1.2em;
+    margin-right: .5em;
+    margin-bottom: -.2em;
+    background: #000;
+    border-radius: .2em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.score-wrapper {
+  .score {
+    color: $score-color;
+    letter-spacing: .08em;
+  }
+}

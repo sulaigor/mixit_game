@@ -1,0 +1,34 @@
+.belt {
+  height: 2em;
+  background: #000;
+  width: 10em;
+  transform: rotate(20deg);
+
+  &.first,
+  &.second {
+    top: $firstBelts-top;
+  }
+
+  &.first {
+    left: 0;
+  }
+
+  &.second {
+    right: 0;
+    transform: rotate(-20deg);
+  }
+
+  &.third,
+  &.fourth {
+    top: $secondsBelts-top;
+  }
+
+  &.third {
+    left: 0;
+  }
+
+  &.fourth {
+    right: 0;
+    transform: rotate(-20deg);
+  }
+}

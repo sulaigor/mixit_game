@@ -1,0 +1,18 @@
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 35em;
+  margin: 0 auto;
+  background: $main-color;
+  border: 2px solid #000;
+  border-radius: .3em;
+
+  > * {
+    position: absolute;
+  }
+
+  @import "components/belts";
+  @import "components/game-info";
+  @import "components/item";
+  @import "components/player";
+}

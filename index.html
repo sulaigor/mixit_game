@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mixit game</title>
+  <link href="https://fonts.googleapis.com/css?family=Molle:400i&amp;subset=latin-ext" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css?family=Trykker" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer type="module" src="js/app.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <h1>Mixit game</h1>
+</header>
+
+<main class="main">
+  <div class="game-info">
+    <div class="score-wrapper">
+      <h2>Score: <span class="score">0</span></h2>
+    </div>
+    <div class="lives-wrapper">
+      <h2>Lives:</h2>
+    </div>
+  </div>
+
+  <div class="belt first"></div>
+  <div class="belt second"></div>
+  <div class="belt third"></div>
+  <div class="belt fourth"></div>
+
+  <div class="player position-0">
+    <div class="player-body"></div>
+    <div class="player-head"></div>
+    <div class="player-hand left">
+      <div class="arm"></div>
+      <div class="elbow"></div>
+    </div>
+    <div class="player-hand right">
+      <div class="arm"></div>
+      <div class="elbow"></div>
+    </div>
+    <div class="player-leg left"></div>
+    <div class="player-leg right"></div>
+    <div class="box"></div>
+  </div>
+</main>
+
+<footer class="footer">
+</footer>
+
+<div id="message-banner" class="banner active">
+  <section class="banner-content">
+    <h1>Start game</h1>
+    <div class="buttons">
+      <button id="start-btn" class="btn">Start</button>
+      <button id="stop-btn" class="btn">Stop</button>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
