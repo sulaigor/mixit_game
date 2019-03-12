@@ -50,11 +50,11 @@ export default class Item {
     domElem.classList.remove('position-' + position);
   }
 
-  move(positionOfPlayer) {
+  move(playerPosition) {
     this.removePositionClass(this.actualPosition);
     this.actualPosition++;
 
-    if(this.beltPosition == positionOfPlayer && this.actualPosition >= this.lastPosition - 1)
+    if(this.beltPosition == playerPosition && this.actualPosition >= this.lastPosition - 1)
       this.catched = true;
     else if(this.actualPosition > this.lastPosition) this.removed = true;
     else this.setPosition(this.actualPosition);

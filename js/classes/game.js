@@ -2,7 +2,7 @@ import Item from "./item.js";
 import Player from "./player.js";
 
 export default class Game {
-  constructor(gameSelector, livesSelector, scoreSelector, itemTypes, difficulty, numberOfBelts = 4) {
+  constructor(gameSelector, livesSelector, scoreSelector, itemTypes, difficulty = 1, numberOfBelts = 4) {
     this.items = [];
     this.gameSelector = gameSelector;
     this.livesSelector = livesSelector;
@@ -13,8 +13,9 @@ export default class Game {
     this.intervalTime = 1000;
     this.catchedItems = 0;
     this.lives = 10;
-    this.gameInterval = null;
     this.livesDomElem = document.querySelector(this.gameSelector + ' ' + this.livesSelector);
+    this.gameInterval = null;
+    this.gameOverEvent = new Event('gameover');
 
     this.insertLives();
     this.player = new Player('.player');
@@ -22,7 +23,7 @@ export default class Game {
   }
 
   changePositionOfPlayer(key) {
-    switch (key)
+    switch (key.toLowerCase())
     {
       case 'a':
         this.player.move(2);
@@ -64,6 +65,10 @@ export default class Game {
     document.addEventListener('keypress', event => this.changePositionOfPlayer(event.key));
   }
 
+  setPlayerPosition(position) {
+    this.player.move(position);
+  }
+
   removePlayerMoving() {
     this.player.getDomElem().parentNode.innerHTML += '';
   }
@@ -74,6 +79,10 @@ export default class Game {
 
   getRandomNumberOfBelt() {
     return Math.floor(Math.random() * (this.numberOfBelts)) + 1;
+  }
+
+  getPlayer() {
+    return this.player;
   }
 
   moveItems() {
@@ -93,6 +102,11 @@ export default class Game {
 
   setScore() {
     document.querySelector(this.scoreSelector).textContent = this.catchedItems * 10;
+  }
+
+  saveHighestScore() {
+    let score = this.catchedItems * 10;
+    if(localStorage.getItem('highestScore') < score) localStorage.setItem('highestScore', score);
   }
 
   decreaseIntervalTime(numbers) {
@@ -137,7 +151,9 @@ export default class Game {
       if(this.intervalTime <= 0 || this.lives == 0) {
         this.stopGame();
         this.clearItems();
-        this.player.move(5);
+        this.setPlayerPosition(5);
+        this.saveHighestScore();
+        document.dispatchEvent(this.gameOverEvent);
         this.removePlayerMoving();
       }
       else if(this.actualInterval != this.intervalTime) this.restartGame();

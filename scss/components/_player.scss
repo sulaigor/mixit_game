@@ -79,6 +79,7 @@
       top: 1.5em;
       left: calc(50% - .8em);
       border: 1px solid $main-color;
+      z-index: 1;
     }
 
     .player-hand {

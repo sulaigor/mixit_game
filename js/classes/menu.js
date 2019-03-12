@@ -6,23 +6,42 @@ export default class Menu {
     this.bannerDomElem = document.getElementById(this.bannerId);
     this.itemsTypes = null;
     this.difficulty = null;
+    this.numberOfBelts = null;
     this.mainSelector = null;
     this.livesSelector = null;
     this.scoreSelector = null;
+    this.highestScoreSelector = null;
     this.game = null;
 
+    this.initGameOverEvent();
   }
 
-  startBanner() {
-    this.setBannerText('Start game');
+  initGameOverEvent() {
+    document.addEventListener('gameover', () => {
+      this.setBannerText('Game Over');
+      this.bannerDomElem.classList.add('active');
+      this.game.getPlayer().reset();
+      console.log(this.game.getPlayer());
+
+      this.setButtonText('start-btn', 'New game');
+      this.game = null;
+    });
   }
 
   setBannerText(newText) {
     this.bannerDomElem.querySelector('h1').textContent = newText;
   }
 
+  setButtonText(id, newText) {
+    document.getElementById(id).textContent = newText;
+  }
+
   setDifficulty(difficulty) {
     this.difficulty = difficulty;
+  }
+
+  setNumberOfBelts(numberOfBelts) {
+    this.numberOfBelts = numberOfBelts;
   }
 
   setItemsTypes(itemsTypes) {
@@ -41,6 +60,18 @@ export default class Menu {
     this.scoreSelector = scoreSelector;
   }
 
+  setHighestScoreSelector(highestScoreSelector) {
+    this.highestScoreSelector = highestScoreSelector;
+
+    let highestScore = localStorage.getItem('highestScore');
+    if(highestScore)
+    {
+      let highestScoreDomElem = document.querySelector(this.highestScoreSelector);
+      highestScoreDomElem.textContent = highestScore;
+      highestScoreDomElem.parentNode.classList.add('visible');
+    }
+  }
+
   startBtn(id) {
     let startBtn = document.getElementById(id);
     startBtn.addEventListener('click', () => {
@@ -55,7 +86,14 @@ export default class Menu {
   }
 
   startNewGame() {
-    this.game = new Game(this.mainSelector, this.livesSelector, this.scoreSelector, this.itemsTypes, this.difficulty);
+    if(!this.difficulty)
+      this.game = new Game(this.mainSelector, this.livesSelector, this.scoreSelector, this.itemsTypes);
+    else if(!this.numberOfBelts)
+      this.game = new Game(this.mainSelector, this.livesSelector, this.scoreSelector, this.itemsTypes,
+        this.difficulty);
+    else
+      this.game = new Game(this.mainSelector, this.livesSelector, this.scoreSelector, this.itemsTypes,
+        this.difficulty, this.numberOfBelts);
     this.game.startGame();
   }
 
