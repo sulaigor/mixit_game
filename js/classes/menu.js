@@ -76,7 +76,10 @@ export default class Menu {
     let startBtn = document.getElementById(id);
     startBtn.addEventListener('click', () => {
       this.bannerDomElem.classList.remove('active');
-      setTimeout(() => this.startNewGame(), 500);
+      setTimeout(() => {
+        this.startNewGame();
+        this.game.getPlayer().wave();
+      }, 500);
     });
   }
 
