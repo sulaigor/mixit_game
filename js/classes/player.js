@@ -14,6 +14,7 @@ export default class Player {
     this.playerDomElem.classList.remove('position-' + this.position);
     this.position = position;
     this.playerDomElem.classList.add('position-' + this.position);
+    this.wave();
   }
 
   getActualPosition() {
@@ -22,5 +23,10 @@ export default class Player {
 
   getDomElem() {
     return this.playerDomElem;
+  }
+
+  wave() {
+    if(this.playerDomElem.classList.contains('wave')) this.playerDomElem.classList.remove('wave');
+    setTimeout(() => this.playerDomElem.classList.add('wave'), 10);
   }
 }
