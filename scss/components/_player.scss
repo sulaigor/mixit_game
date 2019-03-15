@@ -11,6 +11,7 @@
   &.position-0 {
     top: 100%;
     left: 50%;
+    margin-top: -$player-height;
     margin-left: -($player-width / 2);
 
     .player-hand {
@@ -38,9 +39,9 @@
     }
   }
   &.position-1 {
-    top: $first-belts-top;
-    margin-top: -160px;
-    left: 25%;
+    top: 70%;
+    margin-top: -$player-height;
+    left: 17%;
 
     .player-body {
       left: 60%;
@@ -60,8 +61,9 @@
     }
   }
   &.position-2 {
-    bottom: 0;
-    left: 25%;
+    top: 100%;
+    margin-top: -$player-height;
+    left: 17%;
 
     .player-body {
       left: 5.2em;
@@ -71,10 +73,6 @@
       top: 3.6em;
       left: 4.4em;
 
-      &.left {
-
-      }
-
       &.right {
         top: 4.2em;
       }
@@ -82,14 +80,12 @@
   }
   &.position-3 {
     @extend .position-2;
-    left: 75%;
-    //right: 180px;
+    left: 71%;
     transform: rotateY(180deg);
   }
   &.position-4 {
     @extend .position-1;
-    left: 75%;
-    //right: 180px;
+    left: 71%;
     transform: rotateY(180deg);
   }
 
