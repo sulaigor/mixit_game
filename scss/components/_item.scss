@@ -1,17 +1,55 @@
 .item {
-  background: #000;
+  transition: all .15s ease-out;
 
-  transition: all .2s ease-out;
+  &.egg-1 {
+    width: 2em;
+    min-height: 1.2em;
+    background-image: url('../img/vajicko-1.png');
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  
+  &.egg-2 {
+    @extend .egg-1;
+    background-image: url('../img/vajicko-2.png');
+  }
+
+  &.egg-3 {
+    @extend .egg-1;
+    background-image: url('../img/vajicko-3.png');
+  }
+
+  &.egg-4 {
+    @extend .egg-1;
+    background-image: url('../img/vajicko-4.png');
+  }
+
+  &.egg-5 {
+    @extend .egg-1;
+    background-image: url('../img/vajicko-5.png');
+  }
+
+  &.egg-6 {
+    @extend .egg-1;
+    background-image: url('../img/vajicko-6.png');
+  }
+
+  &.egg-7 {
+    @extend .egg-1;
+    background-image: url('../img/vajicko-7.png');
+  }
 
   &.mix {
     width: 2em;
     height: 1em;
+    background: #000;
     border-radius: .5em;
   }
 
   &.fruit {
+    @extend .mix;
     width: 1em;
-    height: 1em;
     margin-left: .5em;
     border-radius: 50%;
   }
@@ -29,150 +67,94 @@
 
   &.belt-1 {
     &.position-1 {
-      top: $firstBelts-top + $position-corector-1;
-      left: 0;
-      transform: rotate(20deg);
+      top: $first-belts-top + $position-1-top;
+      left: $position-1-left;
+      transform: rotate($egg-tilt-1);
     }
 
     &.position-2 {
-      top: $firstBelts-top + $position-corector-2;
-      left: 3rem;
-      transform: rotate(20deg);
+      top: $first-belts-top + $position-2-top;
+      left: $position-2-left;
+      transform: rotate($egg-tilt-2);
     }
 
     &.position-3 {
-      top: $firstBelts-top + $position-corector-3;
-      left: 6rem;
-      transform: rotate(20deg);
+      top: $first-belts-top + $position-3-top;
+      left: $position-3-left;
+      transform: rotate($egg-tilt-3);
     }
 
     &.position-4 {
-      top: $firstBelts-top + $position-corector-4;
-      left: 9.3rem;
-      transform: rotate(40deg);
+      top: $first-belts-top + $position-4-top;
+      left: $position-4-left;
+      transform: rotate($egg-tilt-4);
     }
 
     &.position-5 {
-      top: $firstBelts-top + $position-corector-5;
-      left: 10rem;
-      transform: rotate(85deg);
+      top: $first-belts-top + $position-5-top;
+      left: $position-5-left;
+      transform: rotate($egg-tilt-5);
     }
 
     &.position-6 {
-      top: $firstBelts-top + $position-corector-6;
-      left: 10rem;
-      transform: rotate(90deg);
+      top: $first-belts-top + $position-6-top;
+      left: $position-6-left;
+      transform: rotate($egg-tilt-6);
     }
   }
   &.belt-2 {
-    &.position-1 {
-      top: $secondsBelts-top + $position-corector-1;
-      left: 0;
-      transform: rotate(20deg);
-    }
-
-    &.position-2 {
-      top: $secondsBelts-top + $position-corector-2;
-      left: 3rem;
-      transform: rotate(20deg);
-    }
-
-    &.position-3 {
-      top: $secondsBelts-top + $position-corector-3;
-      left: 6rem;
-      transform: rotate(20deg);
-    }
-
-    &.position-4 {
-      top: $secondsBelts-top + $position-corector-4;
-      left: 9.3rem;
-      transform: rotate(40deg);
-    }
-
-    &.position-5 {
-      top: $secondsBelts-top + $position-corector-5;
-      left: 10rem;
-      transform: rotate(85deg);
-    }
-
-    &.position-6 {
-      top: $secondsBelts-top + $position-corector-6;
-      left: 10rem;
-      transform: rotate(90deg);
-    }
+    @extend .belt-1;
+    &.position-1 { top: $seconds-belts-top + $position-1-top; }
+    &.position-2 { top: $seconds-belts-top + $position-2-top; }
+    &.position-3 { top: $seconds-belts-top + $position-3-top; }
+    &.position-4 { top: $seconds-belts-top + $position-4-top; }
+    &.position-5 { top: $seconds-belts-top + $position-5-top; }
+    &.position-6 { top: $seconds-belts-top + $position-6-top; }
   }
   &.belt-3 {
     &.position-1 {
-      top: $secondsBelts-top + $position-corector-1;
-      right: 0;
-      transform: rotate(-20deg);
+      top: $seconds-belts-top + $position-1-top;
+      right: $position-1-left;
+      transform: rotate(-$egg-tilt-1);
     }
 
     &.position-2 {
-      top: $secondsBelts-top + $position-corector-2;
-      right: 3rem;
-      transform: rotate(-20deg);
+      top: $seconds-belts-top + $position-2-top;
+      right: $position-2-left;
+      transform: rotate(-$egg-tilt-2);
     }
 
     &.position-3 {
-      top: $secondsBelts-top + $position-corector-3;
-      right: 6rem;
-      transform: rotate(-20deg);
+      top: $seconds-belts-top + $position-3-top;
+      right: $position-3-left;
+      transform: rotate(-$egg-tilt-3);
     }
 
     &.position-4 {
-      top: $secondsBelts-top + $position-corector-4;
-      right: 9.3rem;
-      transform: rotate(-40deg);
+      top: $seconds-belts-top + $position-4-top;
+      right: $position-4-left;
+      transform: rotate(-$egg-tilt-4);
     }
 
     &.position-5 {
-      top: $secondsBelts-top + $position-corector-5;
-      right: 10rem;
-      transform: rotate(-85deg);
+      top: $seconds-belts-top + $position-5-top;
+      right: $position-5-left;
+      transform: rotate(-$egg-tilt-5);
     }
 
     &.position-6 {
-      top: $secondsBelts-top + $position-corector-6;
-      right: 10rem;
-      transform: rotate(-90deg);
+      top: $seconds-belts-top + $position-6-top;
+      right: $position-6-left;
+      transform: rotate(-$egg-tilt-6);
     }
   }
   &.belt-4 {
-    &.position-1 {
-      top: $firstBelts-top + $position-corector-1;
-      right: 0;
-      transform: rotate(-20deg);
-    }
-
-    &.position-2 {
-      top: $firstBelts-top + $position-corector-2;
-      right: 3rem;
-      transform: rotate(-20deg);
-    }
-
-    &.position-3 {
-      top: $firstBelts-top + $position-corector-3;
-      right: 6rem;
-      transform: rotate(-20deg);
-    }
-
-    &.position-4 {
-      top: $firstBelts-top + $position-corector-4;
-      right: 9.3rem;
-      transform: rotate(-40deg);
-    }
-
-    &.position-5 {
-      top: $firstBelts-top + $position-corector-5;
-      right: 10rem;
-      transform: rotate(-85deg);
-    }
-
-    &.position-6 {
-      top: $firstBelts-top + $position-corector-6;
-      right: 10rem;
-      transform: rotate(-90deg);
-    }
+    @extend .belt-3;
+    &.position-1 { top: $first-belts-top + $position-1-top; }
+    &.position-2 { top: $first-belts-top + $position-2-top; }
+    &.position-3 { top: $first-belts-top + $position-3-top; }
+    &.position-4 { top: $first-belts-top + $position-4-top; }
+    &.position-5 { top: $first-belts-top + $position-5-top; }
+    &.position-6 { top: $first-belts-top + $position-6-top; }
   }
 }

@@ -2,11 +2,27 @@
   height: 2em;
   background: #000;
   width: 10em;
-  transform: rotate(20deg);
 
   &.first,
   &.second {
-    top: $firstBelts-top;
+    top: $first-belts-top;
+  }
+
+  &.third,
+  &.fourth {
+    top: $seconds-belts-top;
+  }
+
+  &.first,
+  &.third {
+    border-radius: 0 $belt-radius 0 0;
+    transform: rotate($belts-tilt);
+  }
+
+  &.second,
+  &.fourth {
+    border-radius: $belt-radius 0 0 0;
+    transform: rotate(-$belts-tilt);
   }
 
   &.first {
@@ -15,12 +31,6 @@
 
   &.second {
     right: 0;
-    transform: rotate(-20deg);
-  }
-
-  &.third,
-  &.fourth {
-    top: $secondsBelts-top;
   }
 
   &.third {
@@ -29,6 +39,5 @@
 
   &.fourth {
     right: 0;
-    transform: rotate(-20deg);
   }
 }
