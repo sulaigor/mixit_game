@@ -1,9 +1,10 @@
 // size variables
-$player-width: 8em;
+$player-width: 4em;
+$player-height: $player-width * 2;
 
 // position of belts and items variables
-$firstBelts-top: 15em;
-$secondsBelts-top: 25em;
+$firstBelts-top: 10em;
+$secondsBelts-top: 20em;
 
 $position-corector-1: - 2.8em;
 $position-corector-2: - 1.7em;

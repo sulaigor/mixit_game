@@ -54,7 +54,7 @@ export default class Item {
     this.removePositionClass(this.actualPosition);
     this.actualPosition++;
 
-    if(this.beltPosition == playerPosition && this.actualPosition >= this.lastPosition - 1)
+    if(this.beltPosition == playerPosition && this.actualPosition >= this.lastPosition)
       this.catched = true;
     else if(this.actualPosition > this.lastPosition) this.removed = true;
     else this.setPosition(this.actualPosition);

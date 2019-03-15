@@ -1,146 +1,48 @@
 .player {
-  font-size: 130%;
+  font-size: 200%;
   width: $player-width;
-  height: 10em;
+  height: $player-height;
+
+  z-index: 5;
+
+  transition: top .3s ease, left .3s ease;
+  //transition: all .3s ease;
 
   &.position-0 {
-    bottom: 0;
+    top: 100%;
     left: 50%;
     margin-left: -($player-width / 2);
-
-    .player-body {
-      left: calc(50% - 1em);
-    }
-
-    .player-head {
-      left: calc(50% - .8em);
-    }
 
     .player-hand {
       &.left {
         left: 1.6em;
-
-        .arm {
-          top: 0;
-          right: 0;
-          transform: rotate(-40deg);
-        }
-
-        .elbow {
-          top: 1em;
-          transform: rotate(60deg);
-        }
       }
 
       &.right {
         right: 1.6em;
-
-        .arm {
-          top: 0;
-          left: 0;
-          transform: rotate(40deg);
-        }
-
-        .elbow {
-          top: 1em;
-          right: 0;
-          transform: rotate(-60deg);
-        }
       }
-    }
-
-    .player-leg {
-      &.left {
-        left: 1.2em;
-        transform: rotate(-80deg);
-      }
-
-      &.right {
-        right: 1.2em;
-        transform: rotate(80deg);
-      }
-    }
-
-    .box {
-      bottom: 0;
-      left: .15em;
     }
   }
   &.position-5 {
-    top: 40%;
+    top: 60%;
     left: 50%;
     margin-left: -($player-width / 2);
-
-    .player-body {
-      left: calc(50% - 1em);
-    }
-
-    .player-head {
-      top: 1.5em;
-      left: calc(50% - .8em);
-      border: 1px solid $main-color;
-      z-index: 1;
-    }
 
     .player-hand {
       &.left {
         left: 2.05em;
-
-        .arm {
-          top: .4em;
-          transform: rotate(-80deg);
-        }
-
-        .elbow {
-          top: 1.8em;
-          left: -.15em;
-          transform: rotate(90deg);
-        }
       }
-
       &.right {
         right: 1.8em;
-
-        .arm {
-          top: .4em;
-          transform: rotate(80deg);
-        }
-
-        .elbow {
-          top: 1.8em;
-          right: .12em;
-          transform: rotate(90deg);
-        }
       }
-    }
-
-    .player-leg {
-      &.left {
-        left: 1.5em;
-        transform: rotate(-87deg);
-      }
-
-      &.right {
-        right: 1.5em;
-        transform: rotate(87deg);
-      }
-    }
-
-    .box {
-      bottom: 0;
-      left: -1em;
-      transform: rotate(-90deg);
     }
   }
   &.position-1 {
-    top: 260px;
-    left: 140px;
+    top: $firstBelts-top;
+    margin-top: -160px;
+    left: 25%;
 
     .player-body {
-      left: 60%;
-    }
-
-    .player-head {
       left: 60%;
     }
 
@@ -148,157 +50,83 @@
       top: 3.1em;
       left: 3.6em;
 
-      .elbow {
-        top: .22em;
-        right: 1.5em;
-      }
-
       &.left {
-        .arm { transform: rotate(-20deg); }
-        .elbow { transform: rotate(10deg); }
+
       }
 
       &.right {
         top: 3.6em;
-
-        .arm { transform: rotate(-35deg); }
-        .elbow { transform: rotate(15deg); }
       }
-    }
-
-    .player-leg {
-      &.left {
-        left: 3.3em;
-        transform: rotate(-85deg);
-      }
-
-      &.right {
-        left: 4.1em;
-        transform: rotate(88deg);
-      }
-    }
-
-    .box {
-      top: 3em;
-      left: 1em;
     }
   }
   &.position-2 {
     bottom: 0;
-    left: 125px;
+    left: 25%;
 
     .player-body {
       left: 5.2em;
-      transform: rotate(-20deg);
-    }
-
-    .player-head {
-      left: 4em;
-      top: 1.5em;
     }
 
     .player-hand {
       top: 3.6em;
       left: 4.4em;
-      transform: rotate(-40deg);
-
-      .elbow {
-        top: .22em;
-        right: 1.5em;
-      }
 
       &.left {
-        .arm { transform: rotate(-10deg); }
-        .elbow {
-          top: -.1em;
-          right: 1.7em;
-          transform: rotate(20deg);
-        }
+
       }
 
       &.right {
         top: 4.2em;
-
-        .arm { transform: rotate(-35deg); }
-        .elbow { transform: rotate(15deg); }
       }
-    }
-
-    .player-leg {
-      &.left {
-        left: 4.3em;
-        transform: rotate(-85deg);
-      }
-
-      &.right {
-        left: 5.1em;
-        transform: rotate(88deg);
-      }
-    }
-
-    .box {
-      top: 4.5em;
-      left: 1.7em;
     }
   }
   &.position-3 {
     @extend .position-2;
-    left: unset;
-    right: 125px;
+    left: 75%;
+    //right: 180px;
     transform: rotateY(180deg);
   }
   &.position-4 {
     @extend .position-1;
-    left: unset;
-    right: 140px;
+    left: 75%;
+    //right: 180px;
     transform: rotateY(180deg);
   }
 
   > * {
     position: absolute;
-    background: #000;
   }
 
   .player-body {
-    top: calc(50% - 2.5em);
-    width: 2em;
-    height: 4em;
-    border-radius: 40%;
-  }
+    width: 100%;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
 
-  .player-head {
-    top: 1em;
-    width: 1.6em;
-    height: 1.6em;
-    border-radius: 50%;
+    background-image: url('../img/zajicek.png');
+    background-position: top center;
+    background-size: cover;
   }
 
   .player-hand {
-    top: 3.1em;
-    background: unset;
     width: 2em;
     height: 2em;
+    top: 3em !important;
 
-    .arm,
-    .elbow {
-      position: absolute;
-      width: 1.75em;
-      height: .6em;
-      background: #000;
-      border-radius: .2em;
+    &.left {
+      left: -.8em !important;
+      background-image: url('../img/zajicek-ruka-leva.png');
+      background-position: top center;
+      background-size: 100%;
+      background-repeat: no-repeat;
     }
-  }
 
-  .player-leg {
-    top: 7.75em;
-    width: 4em;
-    height: .6em;
-    border-radius: .2em;
-  }
-
-  .box {
-    width: 2em;
-    height: 2em;
-    border-radius: 0 0 .3em .3em;
+    &.right {
+      @extend .left;
+      left: unset !important;
+      height: 2.5em;
+      right: -.4em !important;
+      background-image: url('../img/zajicek-ruka-prava.png');
+    }
   }
 }
