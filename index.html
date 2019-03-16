@@ -14,7 +14,7 @@
   <h1>Mixit game</h1>
 </header>
 
-<main class="main">
+<main id="game-container" class="main">
   <div class="game-info">
     <div class="score-wrapper">
       <h2>Score: <span class="score">0</span></h2>
@@ -46,8 +46,47 @@
     <div class="buttons">
       <button id="start-btn" class="btn">Start</button>
       <button id="stop-btn" class="btn">Stop</button>
+      <button id="controls-btn" class="btn">Controls</button>
     </div>
   </section>
+</div>
+
+<div id="controls-banner" class="banner">
+  <header class="banner-header">
+    <h1>Controls</h1>
+    <button id="change-setting-btn" class="btn">Change</button>
+    <button id="go-back-btn" class="btn">Go back</button>
+  </header>
+  <div class="main">
+    <div class="belt first"></div>
+    <div class="belt second"></div>
+    <div class="belt third"></div>
+    <div class="belt fourth"></div>
+
+    <div class="player position-1">
+      <div class="player-body"></div>
+      <div class="player-hand left"></div>
+      <div class="player-hand right"></div>
+    </div>
+
+    <div class="player position-2">
+      <div class="player-body"></div>
+      <div class="player-hand left"></div>
+      <div class="player-hand right"></div>
+    </div>
+
+    <div class="player position-3">
+      <div class="player-body"></div>
+      <div class="player-hand left"></div>
+      <div class="player-hand right"></div>
+    </div>
+
+    <div class="player position-4">
+      <div class="player-body"></div>
+      <div class="player-hand left"></div>
+      <div class="player-hand right"></div>
+    </div>
+  </div>
 </div>
 
 </body>

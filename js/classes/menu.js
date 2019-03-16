@@ -1,8 +1,9 @@
 import Game from "./game.js";
 
 export default class Menu {
-  constructor(bannerId) {
+  constructor(bannerId, controlsBannerId) {
     this.bannerId = bannerId;
+    this.controlsBannerId = controlsBannerId;
     this.bannerDomElem = document.getElementById(this.bannerId);
     this.itemsTypes = null;
     this.difficulty = null;
@@ -86,6 +87,22 @@ export default class Menu {
   stopBtn(id) {
     let stopBtn = document.getElementById(id);
     stopBtn.addEventListener('click', () => this.game.stopGame());
+  }
+
+  controlsBtn(id) {
+    let controlsBtn = document.getElementById(id);
+    controlsBtn.addEventListener('click', () => {
+      document.getElementById(this.bannerId).classList.remove('active');
+      document.getElementById(this.controlsBannerId).classList.add('active');
+    });
+  }
+
+  goBackBtn(id) {
+    let goBackBtn = document.getElementById(id);
+    goBackBtn.addEventListener('click', () => {
+      document.getElementById(this.bannerId).classList.add('active');
+      document.getElementById(this.controlsBannerId).classList.remove('active');
+    });
   }
 
   startNewGame() {
