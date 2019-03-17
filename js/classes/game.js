@@ -14,8 +14,9 @@ export default class Game {
     this.catchedItems = 0;
     this.lives = 10;
     this.livesDomElem = document.querySelector(this.gameSelector + ' ' + this.livesSelector);
-    this.gameInterval = null;
     this.gameOverEvent = new Event('gameover');
+    this.gameInterval = null;
+    this.controls = null;
 
     this.insertLives();
     this.player = new Player('.player');
@@ -25,19 +26,19 @@ export default class Game {
   changePositionOfPlayer(key) {
     switch (key.toLowerCase())
     {
-      case 'a':
-        this.player.move(2);
-        break;
-
-      case 'd':
-        this.player.move(3);
-        break;
-
-      case 'q':
+      case this.controls.position_1:
         this.player.move(1);
         break;
 
-      case 'e':
+      case this.controls.position_2:
+        this.player.move(2);
+        break;
+
+      case this.controls.position_3:
+        this.player.move(3);
+        break;
+
+      case this.controls.position_4:
         this.player.move(4);
         break;
     }
@@ -67,6 +68,10 @@ export default class Game {
 
   setPlayerPosition(position) {
     this.player.move(position);
+  }
+
+  setControls(controls) {
+    this.controls = controls;
   }
 
   removePlayerMoving() {

@@ -51,13 +51,38 @@
   </section>
 </div>
 
-<div id="controls-banner" class="banner">
+<div id="controls-banner" class="banner ">
   <header class="banner-header">
     <h1>Controls</h1>
-    <button id="change-setting-btn" class="btn">Change</button>
-    <button id="go-back-btn" class="btn">Go back</button>
   </header>
-  <div class="main">
+  <main class="main">
+    <div class="buttons">
+      <button id="save-setting-btn" class="btn">Save</button>
+      <button id="change-setting-btn" class="btn active">Change</button>
+      <button id="go-back-btn" class="btn">Go back</button>
+    </div>
+
+    <h2 class="set-key position-1">
+      <span>Key:</span>
+      <strong class="key">q</strong>
+      <input class="key-input" name="position-1" type="text" placeholder="q" maxlength="1">
+    </h2>
+    <h2 class="set-key position-2">
+      <span>Key:</span>
+      <strong class="key">a</strong>
+      <input class="key-input" name="position-2" type="text" placeholder="a" maxlength="1">
+    </h2>
+    <h2 class="set-key position-3">
+      <span>Key:</span>
+      <strong class="key">d</strong>
+      <input class="key-input" name="position-3" type="text" placeholder="e" maxlength="1">
+    </h2>
+    <h2 class="set-key position-4">
+      <span>Key:</span>
+      <strong class="key">e</strong>
+      <input class="key-input" name="position-4" type="text" placeholder="d" maxlength="1">
+    </h2>
+
     <div class="belt first"></div>
     <div class="belt second"></div>
     <div class="belt third"></div>
@@ -86,7 +111,7 @@
       <div class="player-hand left"></div>
       <div class="player-hand right"></div>
     </div>
-  </div>
+  </main>
 </div>
 
 </body>

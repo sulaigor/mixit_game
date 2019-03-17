@@ -1,18 +1,14 @@
 .banner {
   position: fixed;
-  //display: none;
-  //top: 0;
   bottom: 100%;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(#000, .8);
   z-index: 10;
-
   transition: all .5s ease-out;
 
   &.active {
-    //display: block;
     bottom: 0;
   }
 
@@ -20,7 +16,7 @@
     width: 80%;
     height: 100%;
     margin: 0 auto;
-    padding: 10em 0;
+    padding: 5em 0;
     background: $banner-bg;
     border: 4px solid $main-color;
     border-radius: .3em;
@@ -34,14 +30,14 @@
 
   .buttons {
     text-align: center;
-    margin-top: 8em;
+    margin-top: 5em;
   }
 
   .btn {
     display: block;
     color: $main-color;
     background: rgba(#000, .6);
-    margin: 0 auto .5em;
+    margin: 0 auto .25em;
     padding: .3em 1em .4em;
     border: .04em solid $main-color;
     border-radius: .15em;
@@ -49,7 +45,6 @@
     text-transform: uppercase;
     letter-spacing: .04em;
     cursor: pointer;
-
     transition: all .3s ease;
 
     &:focus {
@@ -80,13 +75,43 @@
 }
 
 #controls-banner {
-  width: 100%;
-  height: 100%;
   top: 100%;
   background: $banner-bg;
+  display: flex;
+  flex-direction: column;
 
   &.active {
     top: 0;
+  }
+
+  .buttons {
+    position: absolute;
+    width: 100%;
+    top: 1%;
+    margin: 0;
+
+    .btn {
+      position: absolute;
+      font-size: 2.5em;
+      top: 0;
+      margin: 0;
+      border-color: #000;
+      z-index: 15;
+    }
+
+    #go-back-btn {
+      left: 50.5%;
+    }
+
+    #change-setting-btn,
+    #save-setting-btn {
+      display: none;
+      right: 50.5%;
+
+      &.active {
+        display: block;
+      }
+    }
   }
 
   .banner-header {
@@ -94,39 +119,114 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    height: 15em;
 
     h1 {
       width: 100%;
-      margin-top: .4em;
-    }
-
-    .btn {
-      position: relative;
-      display: inline-block;
-      font-size: 4em;
-      margin: 0 .5em 0 0;
-      border-color: #000;
-      z-index: 15;
-      align-self: center;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    #go-back-btn {
-      font-size: 2.5em;
+      line-height: 2em;
     }
   }
 
   .main {
-    position: absolute;
-    height: 80%;
-    bottom: 0;
+    flex-grow: 1;
+
+    .set-key {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 2em;
+      margin: 0;
+
+      span {
+        font-size: 90%;
+      }
+
+      &.show-input {
+        .key {
+          display: none;
+        }
+
+        .key-input {
+          display: inline-block;
+          animation: 1s 1 ease showing;
+
+          @keyframes showing {
+            from {
+              border-bottom-color: transparent;
+            }
+            to {
+              border-bottom-color: #000;
+            }
+          }
+        }
+      }
+
+      .key {
+        font-size: 150%;
+        color: $score-color;
+        margin-left: .5em;
+        padding-bottom: .02em;
+        text-transform: uppercase;
+      }
+
+      .key-input {
+        @extend .key;
+        display: none;
+        width: 1.5em;
+        height: 1.4em;
+        margin-left: .3em;
+        padding: 0 0 0 .2em;
+        font-family: 'Trykker', serif;;
+        background: none;
+        border: none;
+        border-bottom: .02em solid #000;
+
+        &::placeholder {
+          color: $score-color;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &.position-1 {
+        top: 4em;
+        left: 5.5em;
+      }
+      &.position-2 {
+        @extend .position-1;
+        top: unset;
+        bottom: 26vh;
+      }
+      &.position-4 {
+        @extend .position-1;
+        left: calc(100% - 9.5em);
+      }
+      &.position-3 {
+        @extend .position-4, .position-2;
+      }
+    }
 
     .player {
-      &.position-1 { top: 55%; }
-      &.position-2 { top: 95%; }
+      font-size: 160%;
+
+      &.position-1 {
+        top: 13em;
+        left: 10em;
+      }
+      &.position-2 {
+        top: 72vh;
+        left: 10em;
+      }
+      &.position-3 {
+        left: unset;
+        right: 10em;
+      }
+      &.position-4 {
+        left: unset;
+        right: 10em;
+      }
     }
 
     .belt {

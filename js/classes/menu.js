@@ -13,6 +13,12 @@ export default class Menu {
     this.scoreSelector = null;
     this.highestScoreSelector = null;
     this.game = null;
+    this.controls = {
+      position_1: 'q',
+      position_2: 'a',
+      position_3: 'd',
+      position_4: 'e',
+    };
 
     this.initGameOverEvent();
   }
@@ -22,8 +28,6 @@ export default class Menu {
       this.setBannerText('Game Over');
       this.bannerDomElem.classList.add('active');
       this.game.getPlayer().reset();
-      console.log(this.game.getPlayer());
-
       this.setButtonText('start-btn', 'New game');
       this.game = null;
     });
@@ -105,6 +109,51 @@ export default class Menu {
     });
   }
 
+  activeSettingBtns(changeBtnId, saveBtnId) {
+    let buttons = [document.getElementById(changeBtnId), document.getElementById(saveBtnId)];
+
+    for(let button of buttons)
+      button.addEventListener('click', () => {
+        let setKeys = document.querySelectorAll('.set-key');
+        for(let setKey of setKeys) setKey.classList.toggle('show-input');
+        buttons[0].classList.toggle('active');
+        buttons[1].classList.toggle('active');
+      });
+  }
+
+  setKeyOfPositions(keysSelector) {
+    let keysInputs = document.querySelectorAll(keysSelector);
+    for(let input of keysInputs)
+      input.addEventListener('input', () => this.setControls(input));
+  }
+
+  setControls(input) {
+    switch (input.name)
+    {
+      case 'position-1':
+        this.controls.position_1 = input.value;
+        this.setInput(input);
+        break;
+      case 'position-2':
+        this.controls.position_2 = input.value;
+        this.setInput(input);
+        break;
+      case 'position-3':
+        this.controls.position_3 = input.value;
+        this.setInput(input);
+        break;
+      case 'position-4':
+        this.controls.position_4 = input.value;
+        this.setInput(input);
+        break;
+    }
+  }
+
+  setInput(input) {
+    input.placeholder = input.value;
+    input.parentNode.querySelector('.key').textContent = input.value;
+  }
+
   startNewGame() {
     if(!this.difficulty)
       this.game = new Game(this.mainSelector, this.livesSelector, this.scoreSelector, this.itemsTypes);
@@ -114,7 +163,8 @@ export default class Menu {
     else
       this.game = new Game(this.mainSelector, this.livesSelector, this.scoreSelector, this.itemsTypes,
         this.difficulty, this.numberOfBelts);
+
+    this.game.setControls(this.controls);
     this.game.startGame();
   }
-
 }

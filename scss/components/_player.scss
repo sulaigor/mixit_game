@@ -13,28 +13,28 @@
     margin-left: -($player-width / 2);
   }
   &.position-5 {
-    top: 60%;
+    top: 7em;
     left: 50%;
     margin-left: -($player-width / 2);
   }
   &.position-1 {
-    top: 70%;
+    top: 12em;
     margin-top: -$player-height;
-    left: 17%;
+    left: 5.5em;
   }
   &.position-2 {
     top: 100%;
     margin-top: -$player-height;
-    left: 17%;
+    left: 5.5em;
   }
   &.position-3 {
     @extend .position-2;
-    left: 71%;
+    left: calc(100% - 9.5em);
     transform: rotateY(180deg);
   }
   &.position-4 {
     @extend .position-1;
-    left: 71%;
+    left: calc(100% - 9.5em);
     transform: rotateY(180deg);
   }
 
