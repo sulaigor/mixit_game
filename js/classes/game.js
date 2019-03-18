@@ -111,7 +111,7 @@ export default class Game {
 
   saveHighestScore() {
     let score = this.catchedItems * 10;
-    if(localStorage.getItem('highestScore') < score) localStorage.setItem('highestScore', score);
+    if(localStorage.getItem('highScore') < score) localStorage.setItem('highScore', score);
   }
 
   decreaseIntervalTime(numbers) {

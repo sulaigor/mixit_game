@@ -12,7 +12,7 @@ export default class Menu {
     this.mainSelector = null;
     this.livesSelector = null;
     this.scoreSelector = null;
-    this.highestScoreSelector = null;
+    this.highScoreSelector = null;
     this.game = null;
     this.controls = {
       position_1: 'q',
@@ -26,7 +26,7 @@ export default class Menu {
 
   initGameOverEvent() {
     document.addEventListener('gameover', () => {
-      this.setBannerText('Game Over');
+      this.setStartBannerText('Game Over');
       this.startBannerDomElem.classList.add('active');
       this.game.getPlayer().reset();
       this.setButtonText('start-btn', 'New game');
@@ -34,8 +34,8 @@ export default class Menu {
     });
   }
 
-  setBannerText(newText) {
-    this.bannerDomElem.querySelector('h1').textContent = newText;
+  setStartBannerText(newText) {
+    this.startBannerDomElem.querySelector('h1').textContent = newText;
   }
 
   setButtonText(id, newText) {
@@ -67,12 +67,14 @@ export default class Menu {
   }
 
   setHighestScoreSelector(highestScoreSelector) {
-    this.highestScoreSelector = highestScoreSelector;
+    this.highScoreSelector = highestScoreSelector;
+  }
 
-    let highestScore = localStorage.getItem('highestScore');
+  showHighScore() {
+    let highestScore = localStorage.getItem('highScore');
     if(highestScore)
     {
-      let highestScoreDomElem = document.querySelector(this.highestScoreSelector);
+      let highestScoreDomElem = document.querySelector(this.highScoreSelector);
       highestScoreDomElem.textContent = highestScore;
       highestScoreDomElem.parentNode.classList.add('visible');
     }
@@ -81,6 +83,7 @@ export default class Menu {
   startBtn(id) {
     let startBtn = document.getElementById(id);
     startBtn.addEventListener('click', () => {
+      this.showHighScore();
       this.startBannerDomElem.classList.remove('active');
       setTimeout(() => {
         this.startNewGame();
