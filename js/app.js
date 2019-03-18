@@ -19,4 +19,4 @@ menu.stopBtn('stop-btn');
 menu.controlsBtn('controls-btn');
 menu.goBackBtn('go-back-btn');
 menu.setKeyOfPositions('.key-input');
-menu.activeSettingBtns('change-setting-btn', 'save-setting-btn');
+menu.setActiveSettingBtn('change-setting-btn', 'save-setting-btn');

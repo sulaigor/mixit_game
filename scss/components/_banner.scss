@@ -8,9 +8,7 @@
   z-index: 10;
   transition: all .5s ease-out;
 
-  &.active {
-    bottom: 0;
-  }
+  &.active { bottom: 0; }
 
   .banner-content {
     width: 80%;
@@ -56,22 +54,12 @@
       background: #fff;
     }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+    &:last-child { margin-bottom: 0; }
   }
 
-  #start-btn {
-    font-size: 5em;
-  }
-
-  #controls-btn {
-    font-size: 3em;
-  }
-
-  #stop-btn {
-    display: none;
-  }
+  #start-btn { font-size: 5em; }
+  #controls-btn { font-size: 3em; }
+  #stop-btn { display: none; }
 }
 
 #controls-banner {
@@ -80,8 +68,28 @@
   display: flex;
   flex-direction: column;
 
-  &.active {
-    top: 0;
+  &.active { top: 0; }
+
+  &.show-input {
+    .buttons {
+      #change-setting-btn { display: none; }
+      #save-setting-btn { display: block; }
+    }
+
+    .main {
+      .set-key {
+        .key { display: none; }
+        .key-input {
+          display: inline-block;
+          animation: 1s 1 ease showing;
+
+          @keyframes showing {
+            from { border-bottom-color: transparent; }
+            to { border-bottom-color: #000; }
+          }
+        }
+      }
+    }
   }
 
   .buttons {
@@ -105,13 +113,10 @@
 
     #change-setting-btn,
     #save-setting-btn {
-      display: none;
       right: 50.5%;
-
-      &.active {
-        display: block;
-      }
     }
+
+    #save-setting-btn { display: none; }
   }
 
   .banner-header {
@@ -129,6 +134,7 @@
 
   .main {
     flex-grow: 1;
+    cursor: default;
 
     .set-key {
       display: flex;
@@ -139,26 +145,6 @@
 
       span {
         font-size: 90%;
-      }
-
-      &.show-input {
-        .key {
-          display: none;
-        }
-
-        .key-input {
-          display: inline-block;
-          animation: 1s 1 ease showing;
-
-          @keyframes showing {
-            from {
-              border-bottom-color: transparent;
-            }
-            to {
-              border-bottom-color: #000;
-            }
-          }
-        }
       }
 
       .key {

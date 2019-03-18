@@ -1,10 +1,11 @@
 import Game from "./game.js";
 
 export default class Menu {
-  constructor(bannerId, controlsBannerId) {
-    this.bannerId = bannerId;
+  constructor(startBannerId, controlsBannerId) {
+    this.startBannerId = startBannerId;
     this.controlsBannerId = controlsBannerId;
-    this.bannerDomElem = document.getElementById(this.bannerId);
+    this.startBannerDomElem = document.getElementById(this.startBannerId);
+    this.controlsBannerDomElem = document.getElementById(this.controlsBannerId);
     this.itemsTypes = null;
     this.difficulty = null;
     this.numberOfBelts = null;
@@ -26,7 +27,7 @@ export default class Menu {
   initGameOverEvent() {
     document.addEventListener('gameover', () => {
       this.setBannerText('Game Over');
-      this.bannerDomElem.classList.add('active');
+      this.startBannerDomElem.classList.add('active');
       this.game.getPlayer().reset();
       this.setButtonText('start-btn', 'New game');
       this.game = null;
@@ -80,7 +81,7 @@ export default class Menu {
   startBtn(id) {
     let startBtn = document.getElementById(id);
     startBtn.addEventListener('click', () => {
-      this.bannerDomElem.classList.remove('active');
+      this.startBannerDomElem.classList.remove('active');
       setTimeout(() => {
         this.startNewGame();
         this.game.getPlayer().wave();
@@ -96,7 +97,7 @@ export default class Menu {
   controlsBtn(id) {
     let controlsBtn = document.getElementById(id);
     controlsBtn.addEventListener('click', () => {
-      document.getElementById(this.bannerId).classList.remove('active');
+      this.startBannerDomElem.classList.remove('active');
       document.getElementById(this.controlsBannerId).classList.add('active');
     });
   }
@@ -104,21 +105,16 @@ export default class Menu {
   goBackBtn(id) {
     let goBackBtn = document.getElementById(id);
     goBackBtn.addEventListener('click', () => {
-      document.getElementById(this.bannerId).classList.add('active');
-      document.getElementById(this.controlsBannerId).classList.remove('active');
+      this.startBannerDomElem.classList.add('active');
+      this.controlsBannerDomElem.classList = 'banner';
     });
   }
 
-  activeSettingBtns(changeBtnId, saveBtnId) {
+  setActiveSettingBtn(changeBtnId, saveBtnId) {
     let buttons = [document.getElementById(changeBtnId), document.getElementById(saveBtnId)];
-
     for(let button of buttons)
-      button.addEventListener('click', () => {
-        let setKeys = document.querySelectorAll('.set-key');
-        for(let setKey of setKeys) setKey.classList.toggle('show-input');
-        buttons[0].classList.toggle('active');
-        buttons[1].classList.toggle('active');
-      });
+      button.addEventListener('click', () =>
+        this.controlsBannerDomElem.classList.toggle('show-input'));
   }
 
   setKeyOfPositions(keysSelector) {
