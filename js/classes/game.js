@@ -118,7 +118,8 @@ export default class Game {
     numbers.forEach(number => {
       if(this.catchedItems == number)
       {
-        this.intervalTime -= 100 * this.difficulty;
+        if(number <= 50) this.intervalTime -= 100 * this.difficulty;
+        else this.intervalTime -= 50 * this.difficulty;
         this.addNewLive();
       }
     });
@@ -148,7 +149,7 @@ export default class Game {
     this.gameInterval = setInterval(() => {
       this.actualInterval = this.intervalTime;
 
-      this.decreaseIntervalTime('10 25 50 75 100 125 150 200 250 300'.split(' '));
+      this.decreaseIntervalTime('25 50 75 100 125 150 200 250 300'.split(' '));
       this.moveItems();
       this.setScore();
       this.generateItems(1);
