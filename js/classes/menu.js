@@ -31,7 +31,13 @@ export default class Menu {
       this.game.getPlayer().reset();
       this.setButtonText('start-btn', 'New game');
       this.game = null;
+      this.setCrackEggsHidden();
     });
+  }
+
+  setCrackEggsHidden() {
+    for(let crackEgg of document.querySelectorAll('.crack-egg'))
+      crackEgg.classList.remove('active');
   }
 
   setStartBannerText(newText) {

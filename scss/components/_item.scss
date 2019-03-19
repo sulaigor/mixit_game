@@ -2,9 +2,9 @@
   transition: all .15s ease-out;
 
   &.egg-1 {
-    width: 2em;
-    min-height: 1.2em;
-    background-image: url('../img/vajicko-1.png');
+    width: 1.5em;
+    min-height: 1.5em;
+    background-image: url('../img/egg-1.png');
     background-position: center center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -12,32 +12,32 @@
   
   &.egg-2 {
     @extend .egg-1;
-    background-image: url('../img/vajicko-2.png');
+    background-image: url('../img/egg-2.png');
   }
 
   &.egg-3 {
     @extend .egg-1;
-    background-image: url('../img/vajicko-3.png');
+    background-image: url('../img/egg-3.png');
   }
 
   &.egg-4 {
     @extend .egg-1;
-    background-image: url('../img/vajicko-4.png');
+    background-image: url('../img/egg-4.png');
   }
 
   &.egg-5 {
     @extend .egg-1;
-    background-image: url('../img/vajicko-5.png');
+    background-image: url('../img/egg-5.png');
   }
 
   &.egg-6 {
     @extend .egg-1;
-    background-image: url('../img/vajicko-6.png');
+    background-image: url('../img/egg-6.png');
   }
 
   &.egg-7 {
     @extend .egg-1;
-    background-image: url('../img/vajicko-7.png');
+    background-image: url('../img/egg-7.png');
   }
 
   &.mix {

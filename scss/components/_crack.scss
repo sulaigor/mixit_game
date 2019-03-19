@@ -1,0 +1,40 @@
+.crack-egg {
+  display: none;
+  width: 2.5em;
+  height: 3em;
+  margin-left: -1.5em;
+
+  &.active {
+    display: block;
+  }
+
+  $crack-egg-left: 10em;
+
+  &.position-1 {
+    top: 15em;
+    left: $crack-egg-left;
+  }
+
+  &.position-2 {
+    @extend .position-1;
+    top: 25em;
+  }
+
+  &.position-3 {
+    @extend .position-2;
+    left: unset;
+    right: $crack-egg-left;
+  }
+
+  &.position-4 {
+    @extend .position-1;
+    left: unset;
+    right: $crack-egg-left;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+}

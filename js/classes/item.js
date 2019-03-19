@@ -1,12 +1,29 @@
+import CrackEgg from "./crack_egg.js";
+
 export default class Item {
   constructor(type, beltPosition) {
     this.type = type;
     this.beltPosition = beltPosition;
     this.removed = false;
     this.catched = false;
+    this.crackGifSrc = 'img/crack-' + this.type + '.gif';
     this.actualPosition = 1;
     this.lastPosition = 6;
     this.domElem = this.createDomElem();
+
+    this.crackEgg = new CrackEgg(this.beltPosition, 500);
+  }
+
+  getItemType() {
+    return this.type;
+  }
+
+  getCrackGifSrc() {
+    return this.crackGifSrc;
+  }
+
+  getBeltPosition() {
+    return this.beltPosition;
   }
 
   insertDomElem(mainSelector) {
@@ -14,7 +31,12 @@ export default class Item {
   }
 
   removeDomElem(removeNow = false) {
-    if(this.catched || this.removed || removeNow) this.domElem.remove();
+    if(this.removed)
+    {
+      this.domElem.remove();
+      this.crackEgg.activate(this.crackGifSrc);
+    }
+    else if(this.catched || removeNow) this.domElem.remove();
   }
 
   isRemoved() {
