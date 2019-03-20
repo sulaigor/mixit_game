@@ -13,13 +13,20 @@ export default class Menu {
     this.livesSelector = null;
     this.scoreSelector = null;
     this.highScoreSelector = null;
+    this.keyInputSelector = null;
     this.game = null;
-    this.controls = {
-      position_1: 'q',
-      position_2: 'a',
-      position_3: 'd',
-      position_4: 'e',
-    };
+
+    let controls = localStorage.getItem('controls');
+    if(controls) this.controls = JSON.parse(controls);
+    else
+    {
+      this.controls = {
+        position_1: 'q',
+        position_2: 'a',
+        position_3: 'd',
+        position_4: 'e',
+      };
+    }
 
     this.initGameOverEvent();
   }
@@ -33,6 +40,11 @@ export default class Menu {
       this.game = null;
       this.setCrackEggsHidden();
     });
+  }
+
+  setKeyInputSelector(keyInputSelector) {
+    this.keyInputSelector = keyInputSelector;
+    this.setKeyOfPositions();
   }
 
   setCrackEggsHidden() {
@@ -109,6 +121,8 @@ export default class Menu {
     controlsBtn.addEventListener('click', () => {
       this.startBannerDomElem.classList.remove('active');
       document.getElementById(this.controlsBannerId).classList.add('active');
+      let keyInputs = document.querySelectorAll(this.keyInputSelector);
+      for(let input of keyInputs) this.setInput(input);
     });
   }
 
@@ -124,40 +138,27 @@ export default class Menu {
     let buttons = [document.getElementById(changeBtnId), document.getElementById(saveBtnId)];
     for(let button of buttons)
       button.addEventListener('click', () =>
-        this.controlsBannerDomElem.classList.toggle('show-input'));
+      {
+        this.controlsBannerDomElem.classList.toggle('show-input')
+        if(button.id == saveBtnId)
+          localStorage.setItem('controls', JSON.stringify(this.controls));
+      });
   }
 
-  setKeyOfPositions(keysSelector) {
-    let keysInputs = document.querySelectorAll(keysSelector);
+  setKeyOfPositions() {
+    let keysInputs = document.querySelectorAll(this.keyInputSelector);
     for(let input of keysInputs)
       input.addEventListener('input', () => this.setControls(input));
   }
 
   setControls(input) {
-    switch (input.name)
-    {
-      case 'position-1':
-        this.controls.position_1 = input.value;
-        this.setInput(input);
-        break;
-      case 'position-2':
-        this.controls.position_2 = input.value;
-        this.setInput(input);
-        break;
-      case 'position-3':
-        this.controls.position_3 = input.value;
-        this.setInput(input);
-        break;
-      case 'position-4':
-        this.controls.position_4 = input.value;
-        this.setInput(input);
-        break;
-    }
+    this.controls[input.name] = input.value;
+    this.setInput(input);
   }
 
   setInput(input) {
-    input.placeholder = input.value;
-    input.parentNode.querySelector('.key').textContent = input.value;
+    input.placeholder = this.controls[input.name];
+    input.parentNode.querySelector('.key').textContent = this.controls[input.name];
   }
 
   startNewGame() {

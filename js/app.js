@@ -20,7 +20,7 @@ menu.startBtn('start-btn');
 menu.stopBtn('stop-btn');
 menu.controlsBtn('controls-btn');
 menu.goBackBtn('go-back-btn');
-menu.setKeyOfPositions('.key-input');
+menu.setKeyInputSelector('.key-input');
 menu.setActiveSettingBtn('change-setting-btn', 'save-setting-btn');
 
 // let item = new Item('egg-1', 1);

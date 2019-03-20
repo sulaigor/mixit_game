@@ -198,20 +198,21 @@
       font-size: 160%;
 
       &.position-1 {
-        top: 13em;
-        left: 10em;
+        top: 5em;
+        left: $player-banner-left;
       }
       &.position-2 {
-        top: 72vh;
-        left: 10em;
+        top: unset;
+        bottom: 0;
+        left: $player-banner-left;
       }
       &.position-3 {
         left: unset;
-        right: 10em;
+        right: $player-banner-left;
       }
       &.position-4 {
         left: unset;
-        right: 10em;
+        right: $player-banner-left;
       }
     }
 
