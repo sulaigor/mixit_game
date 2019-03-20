@@ -5,12 +5,12 @@
 
   &.first,
   &.second {
-    top: $first-belts-top;
+    top: $belt-first-level-top;
   }
 
   &.third,
   &.fourth {
-    top: $seconds-belts-top;
+    top: $belt-second-level-top;
   }
 
   &.first,
