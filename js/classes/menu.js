@@ -16,8 +16,8 @@ export default class Menu {
     this.keyInputSelector = null;
     this.game = null;
 
-    let controls = localStorage.getItem('controls');
-    if(controls) this.controls = JSON.parse(controls);
+    let controls = localStorage.getItem(btoa('controls'));
+    if(controls) this.controls = JSON.parse(atob(controls));
     else
     {
       this.controls = {
@@ -141,7 +141,7 @@ export default class Menu {
       {
         this.controlsBannerDomElem.classList.toggle('show-input')
         if(button.id == saveBtnId)
-          localStorage.setItem('controls', JSON.stringify(this.controls));
+          localStorage.setItem(btoa('controls'), btoa(JSON.stringify(this.controls)));
       });
   }
 
