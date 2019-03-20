@@ -11,7 +11,7 @@ export default class CrackEgg {
     this.domElem.classList.add('active');
     setTimeout(() => {
       this.domElem.classList.remove('active');
-      this.gifElem.src = null;
+      this.gifElem.src = '';
     }, this.hiddenTime);
   }
 }

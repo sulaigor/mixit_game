@@ -77,12 +77,13 @@ export default class Menu {
   }
 
   showHighScore() {
-    let highestScore = localStorage.getItem('highScore');
-    if(highestScore)
+    let highScore = localStorage.getItem(btoa('highScore'));
+    if(highScore)
     {
-      let highestScoreDomElem = document.querySelector(this.highScoreSelector);
-      highestScoreDomElem.textContent = highestScore;
-      highestScoreDomElem.parentNode.classList.add('visible');
+      highScore = atob(highScore);
+      let highScoreDomElem = document.querySelector(this.highScoreSelector);
+      highScoreDomElem.textContent = highScore;
+      highScoreDomElem.parentNode.classList.add('visible');
     }
   }
 
