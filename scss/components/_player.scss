@@ -7,34 +7,30 @@
   transition: top .3s ease, left .3s ease;
 
   &.position-0 {
-    top: 100%;
-    left: 50%;
-    margin-top: -$player-height;
-    margin-left: -($player-width / 2);
+    top: calc(100% - #{$player-height});
+    left: calc(50% - #{$player-width / 2});
   }
   &.position-5 {
+    @extend .position-0;
     top: 7em;
-    left: 50%;
-    margin-left: -($player-width / 2);
   }
+
   &.position-1 {
-    top: 12em;
-    margin-top: -$player-height;
-    left: 5.5em;
+    top: 4.5em;
+    left: $player-left;
   }
   &.position-2 {
-    top: 100%;
-    margin-top: -$player-height;
-    left: 5.5em;
+    @extend .position-1;
+    top: calc(101.5% - #{$player-height});
   }
   &.position-3 {
     @extend .position-2;
-    left: calc(100% - 9.5em);
+    left: calc(100% - #{$player-right});
     transform: rotateY(180deg);
   }
   &.position-4 {
     @extend .position-1;
-    left: calc(100% - 9.5em);
+    left: calc(100% - #{$player-right});
     transform: rotateY(180deg);
   }
 
@@ -56,10 +52,10 @@
 
   .player-hand {
     &.left {
-      width: 2em;
-      height: 2em;
-      top: 3em;
-      left: -.8em;
+      width: 2.75em;
+      height: 3em;
+      top: 2.3em;
+      left: -1.4em;
       background-image: url('../img/zajicek-ruka-leva.png');
       background-position: top center;
       background-size: 100%;
@@ -70,9 +66,9 @@
       @extend .left;
       width: 2.5em;
       height: 3em;
-      top: 2.7em;
+      top: 2.8em;
       left: unset;
-      right: -.95em;
+      right: -.85em;
       background-image: url('../img/zajicek-ruka-prava.png');
     }
   }

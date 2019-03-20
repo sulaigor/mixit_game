@@ -15,29 +15,15 @@
 
   &.first,
   &.third {
+    left: 0;
     border-radius: 0 $belt-radius $belt-radius 0;
     transform: rotate($belts-tilt);
   }
 
   &.second,
   &.fourth {
+    right: 0;
     border-radius: $belt-radius 0 0 $belt-radius;
     transform: rotate(-$belts-tilt);
-  }
-
-  &.first {
-    left: 0;
-  }
-
-  &.second {
-    right: 0;
-  }
-
-  &.third {
-    left: 0;
-  }
-
-  &.fourth {
-    right: 0;
   }
 }
