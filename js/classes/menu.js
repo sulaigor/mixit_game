@@ -148,7 +148,21 @@ export default class Menu {
   setKeyOfPositions() {
     let keysInputs = document.querySelectorAll(this.keyInputSelector);
     for(let input of keysInputs)
-      input.addEventListener('input', () => this.setControls(input));
+      input.addEventListener('input', (event) => {
+        let anotherPositons = [];
+        for(let position in this.controls)
+          if(position != input.name) anotherPositons.push(this.controls[position]);
+
+        if(anotherPositons.includes(input.value))
+        {
+          input.parentNode.classList.add('bad-input');
+          setTimeout(() => {
+            input.value = '';
+            input.parentNode.classList.remove('bad-input');
+          }, 1000);
+        }
+        else this.setControls(input);
+      });
   }
 
   setControls(input) {
@@ -157,6 +171,7 @@ export default class Menu {
   }
 
   setInput(input) {
+    input.value = '';
     input.placeholder = this.controls[input.name];
     input.parentNode.querySelector('.key').textContent = this.controls[input.name];
   }

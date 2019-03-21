@@ -21,22 +21,16 @@
   &.position-3 { @extend .position-4, .position-2; }
 
   &.bad-input {
-    @include animation(bad-input, .3s, 1, linear);
+    @include animation(bad-input, .8s, 1, ease);
   }
 
   @include keyframes(bad-input){
-    0% {
-      @include transform(translateX(0));
-    }
-    40% {
-      @include transform(translateX(25px));
-    }
-    65% {
-      @include transform(translateX(-25px));
-    }
-    100% {
-      @include transform(translateX(0));
-    }
+    0% { @include transform(translateX(0)); }
+    20% { @include transform(translateX($bad-input-translate));  }
+    40% { @include transform(translateX(-$bad-input-translate)); }
+    60% { @include transform(translateX($bad-input-translate)); }
+    80% { @include transform(translateX(-$bad-input-translate)); }
+    100% { @include transform(translateX(0)); }
   }
 
   span {
