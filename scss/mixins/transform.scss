@@ -1,0 +1,11 @@
+@mixin transform($arg) {
+  -webkit-transform: #{$arg};
+  -ms-transform: #{$arg};
+  transform: #{$arg};
+}
+
+@mixin transform-origin($arg) {
+  -webkit-transform-origin: #{$arg};
+  -ms-transform-origin: #{$arg};
+  transform-origin: #{$arg};
+}

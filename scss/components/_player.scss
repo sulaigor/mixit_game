@@ -4,6 +4,10 @@
   height: $player-height;
   z-index: 5;
 
+  -webkit-transition: top .3s ease, left .3s ease;
+  -moz-transition: top .3s ease, left .3s ease;
+  -ms-transition: top .3s ease, left .3s ease;
+  -o-transition: top .3s ease, left .3s ease;
   transition: top .3s ease, left .3s ease;
 
   &.position-0 {
@@ -26,12 +30,12 @@
   &.position-3 {
     @extend .position-2;
     left: calc(100% - #{$player-right});
-    transform: rotateY(180deg);
+    @include transform(rotateY(180deg));
   }
   &.position-4 {
     @extend .position-1;
     left: calc(100% - #{$player-right});
-    transform: rotateY(180deg);
+    @include transform(rotateY(180deg));
   }
 
   > * {
@@ -75,25 +79,24 @@
 
   &.wave {
     .player-hand.right {
-      animation: .6s 2 ease waving;
+      @include animation(waving, .6s, 2);
     }
 
-    @keyframes waving {
+    @include keyframes(waving) {
       0% {
-        transform-origin: -25% 50%;
-        transform: rotate(0deg);
+        @include transform-origin(-25% 50%);
+        @include transform(rotate(0deg));
       }
       25% {
-        transform-origin: -25% 50%;
-        transform: rotate(6deg);
+        @include transform-origin(-25% 50%);
+        @include transform(rotate(6deg));
       }
       75%{
-        transform-origin: -25% 50%;
-        transform: rotate(-6deg);
+        @include transform-origin(-25% 50%);
+        @include transform(rotate(-6deg));
       }
       100% {
-        transform-origin: -25% 50%;
-        transform: rotate(0deg);
+        @include transform-origin(-25% 50%);
       }
     }
   }

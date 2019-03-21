@@ -1,0 +1,74 @@
+.key-setter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2em;
+  margin: 0;
+
+  &.position-1 {
+    top: 4em;
+    left: 5.5em;
+  }
+  &.position-2 {
+    @extend .position-1;
+    top: unset;
+    bottom: 26vh;
+  }
+  &.position-4 {
+    @extend .position-1;
+    left: calc(100% - 9.5em);
+  }
+  &.position-3 { @extend .position-4, .position-2; }
+
+  &.bad-input {
+    @include animation(bad-input, .3s, 1, linear);
+  }
+
+  @include keyframes(bad-input){
+    0% {
+      @include transform(translateX(0));
+    }
+    40% {
+      @include transform(translateX(25px));
+    }
+    65% {
+      @include transform(translateX(-25px));
+    }
+    100% {
+      @include transform(translateX(0));
+    }
+  }
+
+  span {
+    font-size: 90%;
+  }
+
+  .key {
+    font-size: 150%;
+    color: $score-color;
+    margin-left: .5em;
+    padding-bottom: .02em;
+    text-transform: uppercase;
+  }
+
+  .key-input {
+    @extend .key;
+    display: none;
+    width: 1.5em;
+    height: 1.4em;
+    margin-left: .3em;
+    padding: 0 0 0 .2em;
+    font-family: 'Trykker', serif;;
+    background: none;
+    border: none;
+    border-bottom: .02em solid #000;
+
+    &::placeholder {
+      color: $score-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@mixin animation($name, $time: 1s, $repetion: infinite, $function: ease) {
+  -webkit-animation: $time $repetion $function $name;
+  animation: $time $repetion $function $name;
+}

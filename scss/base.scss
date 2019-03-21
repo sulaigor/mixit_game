@@ -2,6 +2,10 @@ html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
 @import "variables";
+@import "mixins/animation";
+@import "mixins/keyframes";
+@import "mixins/transform";
+@import "mixins/transition";
 
 body {
   position: relative;

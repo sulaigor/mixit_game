@@ -1,5 +1,5 @@
 .item {
-  transition: all .15s ease-out;
+  @include transition(.15s, ease-out);
 
   &.egg-1 {
     width: 1.5em;
@@ -69,37 +69,37 @@
     &.position-1 {
       top: calc(#{$belt-first-level-top} + #{$position-1-top});
       left: $position-1-left;
-      transform: rotate($egg-tilt-1);
+      @include transform(rotate($egg-tilt-1));
     }
 
     &.position-2 {
       top: calc(#{$belt-first-level-top} + #{$position-2-top});
       left: $position-2-left;
-      transform: rotate($egg-tilt-2);
+      @include transform(rotate($egg-tilt-2));
     }
 
     &.position-3 {
       top: calc(#{$belt-first-level-top} + #{$position-3-top});
       left: $position-3-left;
-      transform: rotate($egg-tilt-3);
+      @include transform(rotate($egg-tilt-3));
     }
 
     &.position-4 {
       top: calc(#{$belt-first-level-top} + #{$position-4-top});
       left: $position-4-left;
-      transform: rotate($egg-tilt-4);
+      @include transform(rotate($egg-tilt-4));
     }
 
     &.position-5 {
       top: calc(#{$belt-first-level-top} + #{$position-5-top});
       left: $position-5-left;
-      transform: rotate($egg-tilt-5);
+      @include transform(rotate($egg-tilt-5));
     }
 
     &.position-6 {
       top: calc(#{$belt-first-level-top} + #{$position-6-top});
       left: $position-6-left;
-      transform: rotate($egg-tilt-6);
+      @include transform(rotate($egg-tilt-6));
     }
   }
   &.belt-2 {
@@ -115,37 +115,37 @@
     &.position-1 {
       top: calc(#{$belt-second-level-top} + #{$position-1-top});
       right: $position-1-left;
-      transform: rotate(-$egg-tilt-1);
+      @include transform(rotate(-$egg-tilt-1));
     }
 
     &.position-2 {
       top: calc(#{$belt-second-level-top} + #{$position-2-top});
       right: $position-2-left;
-      transform: rotate(-$egg-tilt-2);
+      @include transform(rotate(-$egg-tilt-2));
     }
 
     &.position-3 {
       top: calc(#{$belt-second-level-top} + #{$position-3-top});
       right: $position-3-left;
-      transform: rotate(-$egg-tilt-3);
+      @include transform(rotate(-$egg-tilt-3));
     }
 
     &.position-4 {
       top: calc(#{$belt-second-level-top} + #{$position-4-top});
       right: $position-4-left;
-      transform: rotate(-$egg-tilt-4);
+      @include transform(rotate(-$egg-tilt-4));
     }
 
     &.position-5 {
       top: calc(#{$belt-second-level-top} + #{$position-5-top});
       right: $position-5-left;
-      transform: rotate(-$egg-tilt-5);
+      @include transform(rotate(-$egg-tilt-5));
     }
 
     &.position-6 {
       top: calc(#{$belt-second-level-top} + #{$position-6-top});
       right: $position-6-left;
-      transform: rotate(-$egg-tilt-6);
+      @include transform(rotate(-$egg-tilt-6));
     }
   }
   &.belt-4 {

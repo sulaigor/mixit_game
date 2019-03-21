@@ -6,7 +6,7 @@
   height: 100%;
   background: rgba(#000, .8);
   z-index: 10;
-  transition: all .5s ease-out;
+  @include transition(.5s, ease-out);
 
   &.active { bottom: 0; }
 
@@ -43,7 +43,7 @@
     text-transform: uppercase;
     letter-spacing: .04em;
     cursor: pointer;
-    transition: all .3s ease;
+    @include transition;
 
     &:focus {
       outline: none;
@@ -77,13 +77,13 @@
     }
 
     .main {
-      .set-key {
+      .key-setter {
         .key { display: none; }
         .key-input {
           display: inline-block;
-          animation: 1s 1 ease showing;
 
-          @keyframes showing {
+          @include animation(showing, 1s, 1);
+          @include keyframes(showing) {
             from { border-bottom-color: transparent; }
             to { border-bottom-color: #000; }
           }
@@ -136,63 +136,7 @@
     flex-grow: 1;
     cursor: default;
 
-    .set-key {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: 2em;
-      margin: 0;
-
-      span {
-        font-size: 90%;
-      }
-
-      .key {
-        font-size: 150%;
-        color: $score-color;
-        margin-left: .5em;
-        padding-bottom: .02em;
-        text-transform: uppercase;
-      }
-
-      .key-input {
-        @extend .key;
-        display: none;
-        width: 1.5em;
-        height: 1.4em;
-        margin-left: .3em;
-        padding: 0 0 0 .2em;
-        font-family: 'Trykker', serif;;
-        background: none;
-        border: none;
-        border-bottom: .02em solid #000;
-
-        &::placeholder {
-          color: $score-color;
-        }
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      &.position-1 {
-        top: 4em;
-        left: 5.5em;
-      }
-      &.position-2 {
-        @extend .position-1;
-        top: unset;
-        bottom: 26vh;
-      }
-      &.position-4 {
-        @extend .position-1;
-        left: calc(100% - 9.5em);
-      }
-      &.position-3 {
-        @extend .position-4, .position-2;
-      }
-    }
+    @import "key-setter";
 
     .player {
       font-size: 160%;
@@ -203,7 +147,7 @@
       }
       &.position-2 {
         top: unset;
-        bottom: 0;
+        bottom: 2em;
         left: $player-banner-left;
       }
       &.position-3 {
