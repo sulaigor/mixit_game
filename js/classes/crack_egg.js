@@ -11,7 +11,10 @@ export default class CrackEgg {
     this.domElem.classList.add('active');
     setTimeout(() => {
       this.domElem.classList.remove('active');
-      this.gifElem.src = '';
+      // TODO problem 404
+      this.gifElem.src = null;
+      // this.gifElem.src = '';
+      // this.gifElem.src = 'img/crack-egg-default.png';
     }, this.hiddenTime);
   }
 }

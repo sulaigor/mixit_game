@@ -18,6 +18,7 @@ export default class Game {
     this.gameInterval = null;
     this.controls = null;
 
+    this.setScore();
     this.insertLives();
     this.player = new Player('.player');
     this.playerMoving();
@@ -111,7 +112,7 @@ export default class Game {
 
   saveHighestScore() {
     let score = this.catchedItems * 10;
-    if(localStorage.getItem(btoa('highScore')) < score)
+    if(atob(localStorage.getItem(btoa('highScore'))) < score)
       localStorage.setItem(btoa('highScore'), btoa(score));
   }
 
