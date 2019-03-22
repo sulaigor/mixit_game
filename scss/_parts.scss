@@ -5,17 +5,17 @@
     font-size: 4em;
     margin: 0;
     padding: .2em 0;
-    text-shadow: -3px -2px 0px rgba($main-color, .8);
+    text-shadow: -3px -2px 0px rgba($red-color, .8);
   }
 }
 
 .footer {
   h2 {
     display: none;
-    color: darken($main-color, 20%);
+    color: lighten(#111, 20%);
 
     .highest-score {
-      color: $main-color;
+      color: #111;
     }
     
     &.visible {

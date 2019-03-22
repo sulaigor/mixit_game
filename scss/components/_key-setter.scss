@@ -20,10 +20,7 @@
   }
   &.position-3 { @extend .position-4, .position-2; }
 
-  &.bad-input {
-    @include animation(bad-input, .8s, 1, ease);
-  }
-
+  &.bad-input { @include animation(bad-input, .8s, 1, ease); }
   @include keyframes(bad-input){
     0% { @include transform(translateX(0)); }
     20% { @include transform(translateX($bad-input-translate));  }
@@ -39,7 +36,7 @@
 
   .key {
     font-size: 150%;
-    color: $score-color;
+    color: $red-color;
     margin-left: .5em;
     padding-bottom: .02em;
     text-transform: uppercase;
@@ -58,7 +55,7 @@
     border-bottom: .02em solid #000;
 
     &::placeholder {
-      color: $score-color;
+      color: $red-color;
     }
 
     &:focus {
