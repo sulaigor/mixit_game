@@ -11,6 +11,10 @@ $bad-input-translate: 50px;
 // END: key setter variables
 
 // START: position of belts, cracks and items variables
+// moving button
+$moving-btn-left: 100%;
+$moving-btn-radius: 4em;
+
 // belts
 $belt-first-level-top: 10em;
 $belt-second-level-top: 20em;
@@ -51,4 +55,7 @@ $main-bg: #eecfa1;
 $game-bg: #a7deed;
 $red-color: #BA3523;
 $banner-bg: #191919;
+$moving-btn-bg: #ccc;
+$moving-btn-click-bg: #134597;
+$moving-btn-border-color: #777;
 // END: colors variables

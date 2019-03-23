@@ -9,19 +9,6 @@
   }
 }
 
-.footer {
-  h2 {
-    display: none;
-    color: lighten(#111, 20%);
-
-    .highest-score {
-      color: #111;
-    }
-    
-    &.visible { display: block; }
-  }
-}
-
 #preload-images {
   display: none;
 }

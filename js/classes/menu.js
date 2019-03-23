@@ -12,7 +12,7 @@ export default class Menu {
     this.mainSelector = null;
     this.livesSelector = null;
     this.scoreSelector = null;
-    this.highScoreSelector = null;
+    this.highScoreId = null;
     this.keyInputSelector = null;
     this.game = null;
 
@@ -38,13 +38,16 @@ export default class Menu {
 
   initPlayerMovingByButtons() {
     for(let button of document.querySelectorAll('.moving-btn'))
-      button.addEventListener('click', () => {
+    {
+      button.addEventListener('touchstart', () => {
+        button.classList.add('click');
+        setTimeout(() => button.classList.remove('click'), 250);
         if(button.classList.contains('position-1')) document.dispatchEvent(this.playerPosition_1);
         if(button.classList.contains('position-2')) document.dispatchEvent(this.playerPosition_2);
         if(button.classList.contains('position-3')) document.dispatchEvent(this.playerPosition_3);
         if(button.classList.contains('position-4')) document.dispatchEvent(this.playerPosition_4);
-        console.log(button);
       });
+    }
   }
 
   initPlayerMovingByKyboard() {
@@ -123,8 +126,8 @@ export default class Menu {
     this.scoreSelector = scoreSelector;
   }
 
-  setHighestScoreSelector(highestScoreSelector) {
-    this.highScoreSelector = highestScoreSelector;
+  setHighestScoreId(highestScoreId) {
+    this.highScoreId = highestScoreId;
   }
 
   showHighScore() {
@@ -132,7 +135,7 @@ export default class Menu {
     if(highScore)
     {
       highScore = atob(highScore);
-      let highScoreDomElem = document.querySelector(this.highScoreSelector);
+      let highScoreDomElem = document.getElementById(this.highScoreId);
       highScoreDomElem.textContent = highScore;
       highScoreDomElem.parentNode.classList.add('visible');
     }
@@ -147,6 +150,10 @@ export default class Menu {
         this.startNewGame();
         this.game.getPlayer().wave();
       }, 500);
+    });
+    startBtn.addEventListener('touchstart', () => {
+      startBtn.classList.add('click');
+      setTimeout(() => startBtn.classList.remove('click'), 250);
     });
   }
 

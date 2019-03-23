@@ -49,7 +49,8 @@
       outline: none;
     }
 
-    &:hover {
+    &:hover,
+    &.click {
       color: #555;
       background: #fff;
     }

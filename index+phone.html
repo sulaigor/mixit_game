@@ -10,19 +10,13 @@
 </head>
 <body class="phone">
 
-<header class="header">
-  <h1>Mixit game</h1>
-</header>
-
-  <button class="moving-btn position-1">Position 1</button>
-  <button class="moving-btn position-2">Position 2</button>
-  <button class="moving-btn position-3">Position 3</button>
-  <button class="moving-btn position-4">Position 4</button>
+<button class="moving-btn position-1"></button>
+<button class="moving-btn position-2"></button>
+<button class="moving-btn position-3"></button>
+<button class="moving-btn position-4"></button>
 
 <main id="game-container" class="main">
-
   <div class="game-bg"></div>
-
   <div class="game-info">
     <div class="score-wrapper">
       <h2>Score: <span class="score">0</span></h2>
@@ -31,6 +25,7 @@
       <h2>Lives:</h2>
     </div>
   </div>
+  <h2 class="high-score">High score: <span id="high-score"></span></h2>
 
   <div class="belt first"></div>
   <div class="belt second"></div>
@@ -56,10 +51,6 @@
     <div class="player-hand right"></div>
   </div>
 </main>
-
-<footer class="footer">
-  <h2>Highest score: <span class="highest-score"></span></h2>
-</footer>
 
 <div id="message-banner" class="banner active">
   <section class="banner-content">

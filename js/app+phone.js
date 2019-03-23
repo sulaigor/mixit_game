@@ -10,7 +10,7 @@ menu.setItemsTypes(itemsTypes);
 menu.setMainSelector('#game-container');
 menu.setLivesSelector('.lives-wrapper');
 menu.setScoreSelector('.score');
-menu.setHighestScoreSelector('.highest-score');
+menu.setHighestScoreId('high-score');
 
 menu.startBtn('start-btn');
 menu.stopBtn('stop-btn');

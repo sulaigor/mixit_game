@@ -3,37 +3,51 @@
   display: block;
   width: 10%;
   height: 50vh;
-
-  color: #fff;
-  background: #000;
+  background: $moving-btn-bg url("../img/btn-arrow.svg") center center no-repeat;
+  background-size: 70%;
+  border: 1px solid $moving-btn-border-color;
   z-index: 100;
+
+  &.click {
+    -webkit-box-shadow: inset 0px 0px 20px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 20px -2px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 20px -2px rgba(0,0,0,0.75);
+  }
+
+  .arrow {
+    display: none;
+    width: 4em;
+    height: 4em;
+    margin: 0;
+    background: url("../img/btn-arrow.svg") center center no-repeat;
+    background-size: 100%;
+  }
 
   &:focus {
     outline: none;
   }
 
-  $moving-btn-left: 100%;
-
   &.position-1 {
     top: 0;
     left: 0;
-    //right: $moving-btn-left;
+    border-radius: $moving-btn-radius 0 0 0;
+    border-bottom: none;
   }
   &.position-2 {
     bottom: 0;
     left: 0;
-    //right: $moving-btn-left;
+    border-radius: 0 0 0 $moving-btn-radius;
   }
   &.position-3 {
     @extend .position-2;
-    //left: $moving-btn-left;
     left: unset;
     right: 0;
+    border-radius: 0 0 $moving-btn-radius 0;
   }
   &.position-4 {
     @extend .position-1;
-    //left: $moving-btn-left;
     left: unset;
     right: 0;
+    border-radius: 0 $moving-btn-radius 0 0;
   }
 }
