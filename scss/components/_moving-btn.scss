@@ -1,0 +1,39 @@
+.moving-btn {
+  position: absolute;
+  display: none;
+  width: 10%;
+  height: 50vh;
+
+  color: #fff;
+  background: #000;
+  z-index: 100;
+
+  &:focus {
+    outline: none;
+  }
+
+  $moving-btn-left: 100%;
+
+  &.position-1 {
+    top: 0;
+    left: 0;
+    //right: $moving-btn-left;
+  }
+  &.position-2 {
+    bottom: 0;
+    left: 0;
+    //right: $moving-btn-left;
+  }
+  &.position-3 {
+    @extend .position-2;
+    //left: $moving-btn-left;
+    left: unset;
+    right: 0;
+  }
+  &.position-4 {
+    @extend .position-1;
+    //left: $moving-btn-left;
+    left: unset;
+    right: 0;
+  }
+}

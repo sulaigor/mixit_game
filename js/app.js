@@ -1,6 +1,4 @@
-// import Banner from "./components/start_banner.js";
-
-// Banner.init('message-banner');
+'use strict';
 
 import Menu from "./classes/menu.js";
 // import Item from "./classes/item.js";
