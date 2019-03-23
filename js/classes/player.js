@@ -3,6 +3,8 @@ export default class Player {
     this.playerSelector = playerSelector;
     this.position = 0;
     this.playerDomElem = document.querySelector(this.playerSelector);
+
+    this.setMovingEvents();
   }
 
   reset() {
@@ -15,6 +17,11 @@ export default class Player {
     this.position = position;
     this.playerDomElem.classList.add('position-' + this.position);
     this.wave();
+  }
+
+  setMovingEvents() {
+    for(let i = 1; i < 5; ++i)
+      document.addEventListener('player-position_' + i, () => this.move(i));
   }
 
   getActualPosition() {

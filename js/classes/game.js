@@ -21,28 +21,6 @@ export default class Game {
     this.setScore();
     this.insertLives();
     this.player = new Player('.player');
-    this.playerMoving();
-  }
-
-  changePositionOfPlayer(key) {
-    switch (key.toLowerCase())
-    {
-      case this.controls.position_1:
-        this.player.move(1);
-        break;
-
-      case this.controls.position_2:
-        this.player.move(2);
-        break;
-
-      case this.controls.position_3:
-        this.player.move(3);
-        break;
-
-      case this.controls.position_4:
-        this.player.move(4);
-        break;
-    }
   }
 
   insertLives() {
@@ -61,10 +39,6 @@ export default class Game {
   removeLive() {
     this.lives--;
     this.livesDomElem.querySelector('.live').remove();
-  }
-
-  playerMoving() {
-    document.addEventListener('keypress', event => this.changePositionOfPlayer(event.key));
   }
 
   setPlayerPosition(position) {

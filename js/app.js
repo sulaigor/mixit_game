@@ -21,19 +21,4 @@ menu.goBackBtn('go-back-btn');
 menu.setKeyInputSelector('.key-input');
 menu.setActiveSettingBtn('change-setting-btn', 'save-setting-btn');
 
-// let item = new Item('egg-1', 1);
-// console.log(item.getItemType(), item.getCrackGifSrc(), item.getBeltPosition());
-// item.insertDomElem('body .main');
-//
-// let crackEgg = new CrackEgg(1);
-
-// setInterval(() => item.move(), 1000);
-
-// let crackEgg = document.querySelector('.crack-egg');
-// let src = crackEgg.querySelector('img').src;
-// crackEgg.querySelector('img').src = '';
-//
-// setTimeout(() => {
-//   crackEgg.style.displey = 'block';
-//   crackEgg.querySelector('img').src = src
-// }, 2000);
+menu.initPlayerMovingByKyboard();

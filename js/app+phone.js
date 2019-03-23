@@ -14,3 +14,5 @@ menu.setHighestScoreSelector('.highest-score');
 
 menu.startBtn('start-btn');
 menu.stopBtn('stop-btn');
+
+menu.initPlayerMovingByButtons();

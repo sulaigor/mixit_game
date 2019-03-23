@@ -28,7 +28,46 @@ export default class Menu {
       };
     }
 
+    this.playerPosition_1 = new Event('player-position_1');
+    this.playerPosition_2 = new Event('player-position_2');
+    this.playerPosition_3 = new Event('player-position_3');
+    this.playerPosition_4 = new Event('player-position_4');
+
     this.initGameOverEvent();
+  }
+
+  initPlayerMovingByButtons() {
+    for(let button of document.querySelectorAll('.moving-btn'))
+      button.addEventListener('click', () => {
+        if(button.classList.contains('position-1')) document.dispatchEvent(this.playerPosition_1);
+        if(button.classList.contains('position-2')) document.dispatchEvent(this.playerPosition_2);
+        if(button.classList.contains('position-3')) document.dispatchEvent(this.playerPosition_3);
+        if(button.classList.contains('position-4')) document.dispatchEvent(this.playerPosition_4);
+        console.log(button);
+      });
+  }
+
+  initPlayerMovingByKyboard() {
+    document.addEventListener('keypress', event => {
+      switch (event.key.toLowerCase())
+      {
+        case this.controls.position_1:
+          document.dispatchEvent(this.playerPosition_1);
+          break;
+
+        case this.controls.position_2:
+          document.dispatchEvent(this.playerPosition_2);
+          break;
+
+        case this.controls.position_3:
+          document.dispatchEvent(this.playerPosition_3);
+          break;
+
+        case this.controls.position_4:
+          document.dispatchEvent(this.playerPosition_4);
+          break;
+      }
+    });
   }
 
   initGameOverEvent() {
