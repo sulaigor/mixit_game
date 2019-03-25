@@ -9,25 +9,25 @@
   }
 
   &.position-1 {
-    top: 15em;
+    top: $crack-first-level-top;
     left: $crack-egg-left;
   }
 
   &.position-2 {
     @extend .position-1;
-    top: 25em;
+    top: $crack-second-level-top;
   }
 
   &.position-3 {
     @extend .position-2;
     left: unset;
-    right: $crack-egg-left;
+    right: $crack-egg-left - 1em;
   }
 
   &.position-4 {
     @extend .position-1;
     left: unset;
-    right: $crack-egg-left;
+    right: $crack-egg-left - 1em;
   }
 
   img {

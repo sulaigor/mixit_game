@@ -44,11 +44,19 @@ body.phone {
     }
 
     .player {
-      font-size: 1.4em;
+      font-size: 125%;
+
+      &.position-1 {
+        top: 5.5em;
+      }
+
+      &.position-2 {
+        top: calc(101.5% - #{$player-height});
+      }
     }
 
     .belt {
-      font-size: 70%;
+      font-size: 65%;
     }
 
     .item {
@@ -61,6 +69,10 @@ body.phone {
 
     .high-score {
       font-size: 100%;
+    }
+
+    .crack-egg {
+      font-size: 65%;
     }
   }
 

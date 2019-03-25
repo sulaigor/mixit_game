@@ -71,37 +71,37 @@
       &.position-1 {
         bottom: $position-1-top;
         right: $position-1-left;
-        @include transform(rotate($egg-tilt-1));
+        @include transform(rotate(-$egg-tilt-1));
       }
 
       &.position-2 {
         bottom: $position-2-top;
         right: $position-2-left;
-        @include transform(rotate($egg-tilt-2));
+        @include transform(rotate(-$egg-tilt-2));
       }
 
       &.position-3 {
         bottom: $position-3-top;
         right: $position-3-left;
-        @include transform(rotate($egg-tilt-3));
+        @include transform(rotate(-$egg-tilt-3));
       }
 
       &.position-4 {
         bottom: $position-4-top;
         right: $position-4-left;
-        @include transform(rotate($egg-tilt-4));
+        @include transform(rotate(-$egg-tilt-4));
       }
 
       &.position-5 {
         bottom: $position-5-top;
         right: $position-5-left;
-        @include transform(rotate($egg-tilt-5));
+        @include transform(rotate(-$egg-tilt-5));
       }
 
       &.position-6 {
         bottom: $position-6-top;
         right: $position-6-left;
-        @include transform(rotate($egg-tilt-6));
+        @include transform(rotate(-$egg-tilt-6));
       }
     }
   }

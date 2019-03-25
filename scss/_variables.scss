@@ -16,15 +16,15 @@ $moving-btn-left: 100%;
 $moving-btn-radius: 4em;
 
 // belts
-$belt-first-level-top: 10em;
-$belt-second-level-top: 20em;
+$belt-first-level-top: 30%;
+$belt-second-level-top: 60%;
 $belts-tilt: 20deg;
 $belt-radius: 1em;
 
 // cracks
-$crack-first-level-top: $belt-first-level-top + 5em;
-$crack-second-level-top: $belt-second-level-top + 5em;
-$crack-egg-left: 10em;
+$crack-first-level-top: $belt-first-level-top + 15%;
+$crack-second-level-top: $belt-second-level-top + 15%;
+$crack-egg-left: 11em;
 
 // items
 $position-1-top: 100%;
