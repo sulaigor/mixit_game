@@ -107,7 +107,7 @@ export default class Game {
       let type = this.itemTypes[this.getRandomItemTypeIndex()];
       let belt = this.getRandomNumberOfBelt();
       let item = new Item(type, belt);
-      item.insertDomElem(this.gameSelector);
+      item.insertDomElem('.belt.belt-' + item.getBeltPosition());
       this.items.push(item);
     }
   }

@@ -162,8 +162,8 @@
     }
 
     .belt {
-      &.first, &.second { top: 25%; }
-      &.third, &.fourth { top: 65%; }
+      &.belt-1, &.belt-4 { top: 25%; }
+      &.belt-2, &.belt-3 { top: 65%; }
     }
   }
 }

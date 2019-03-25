@@ -3,27 +3,106 @@
   background: #000;
   width: 10em;
 
-  &.first,
-  &.second {
-    top: $belt-first-level-top;
-  }
+  &.belt-1, &.belt-4 { top: $belt-first-level-top; }
+  &.belt-2, &.belt-3 { top: $belt-second-level-top; }
 
-  &.third,
-  &.fourth {
-    top: $belt-second-level-top;
-  }
-
-  &.first,
-  &.third {
+  &.belt-1,
+  &.belt-2 {
     left: 0;
     border-radius: 0 $belt-radius $belt-radius 0;
     @include transform(rotate($belts-tilt));
   }
 
-  &.second,
-  &.fourth {
+  &.belt-3,
+  &.belt-4 {
     right: 0;
     border-radius: $belt-radius 0 0 $belt-radius;
     @include transform(rotate(-$belts-tilt));
+  }
+
+  .item {
+    position: absolute;
+  }
+
+  &.belt-1,
+  &.belt-2 {
+    .item {
+      &.position-1 {
+        bottom: $position-1-top;
+        left: $position-1-left;
+        @include transform(rotate($egg-tilt-1));
+      }
+
+      &.position-2 {
+        bottom: $position-2-top;
+        left: $position-2-left;
+        @include transform(rotate($egg-tilt-2));
+      }
+
+      &.position-3 {
+        bottom: $position-3-top;
+        left: $position-3-left;
+        @include transform(rotate($egg-tilt-3));
+      }
+
+      &.position-4 {
+        bottom: $position-4-top;
+        left: $position-4-left;
+        @include transform(rotate($egg-tilt-4));
+      }
+
+      &.position-5 {
+        bottom: $position-5-top;
+        left: $position-5-left;
+        @include transform(rotate($egg-tilt-5));
+      }
+
+      &.position-6 {
+        bottom: $position-6-top;
+        left: $position-6-left;
+        @include transform(rotate($egg-tilt-6));
+      }
+    }
+  }
+
+  &.belt-3,
+  &.belt-4 {
+    .item {
+      &.position-1 {
+        bottom: $position-1-top;
+        right: $position-1-left;
+        @include transform(rotate($egg-tilt-1));
+      }
+
+      &.position-2 {
+        bottom: $position-2-top;
+        right: $position-2-left;
+        @include transform(rotate($egg-tilt-2));
+      }
+
+      &.position-3 {
+        bottom: $position-3-top;
+        right: $position-3-left;
+        @include transform(rotate($egg-tilt-3));
+      }
+
+      &.position-4 {
+        bottom: $position-4-top;
+        right: $position-4-left;
+        @include transform(rotate($egg-tilt-4));
+      }
+
+      &.position-5 {
+        bottom: $position-5-top;
+        right: $position-5-left;
+        @include transform(rotate($egg-tilt-5));
+      }
+
+      &.position-6 {
+        bottom: $position-6-top;
+        right: $position-6-left;
+        @include transform(rotate($egg-tilt-6));
+      }
+    }
   }
 }

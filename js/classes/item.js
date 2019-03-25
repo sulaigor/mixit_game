@@ -26,8 +26,8 @@ export default class Item {
     return this.beltPosition;
   }
 
-  insertDomElem(mainSelector) {
-    document.querySelector(mainSelector).append(this.domElem);
+  insertDomElem(elementSelector) {
+    document.querySelector(elementSelector).append(this.domElem);
   }
 
   removeDomElem(removeNow = false) {
