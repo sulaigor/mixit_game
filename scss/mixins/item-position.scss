@@ -1,0 +1,10 @@
+@mixin item-position($position-y, $position-x, $rotation, $side: 'left') {
+  bottom: $position-y;
+  @if($side == 'right') {
+    right: $position-x;
+  }
+  @else {
+    left: $position-x;
+  }
+  @include transform(rotate($rotation));
+}

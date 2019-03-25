@@ -27,82 +27,24 @@
   &.belt-1,
   &.belt-2 {
     .item {
-      &.position-1 {
-        bottom: $position-1-top;
-        left: $position-1-left;
-        @include transform(rotate($egg-tilt-1));
-      }
-
-      &.position-2 {
-        bottom: $position-2-top;
-        left: $position-2-left;
-        @include transform(rotate($egg-tilt-2));
-      }
-
-      &.position-3 {
-        bottom: $position-3-top;
-        left: $position-3-left;
-        @include transform(rotate($egg-tilt-3));
-      }
-
-      &.position-4 {
-        bottom: $position-4-top;
-        left: $position-4-left;
-        @include transform(rotate($egg-tilt-4));
-      }
-
-      &.position-5 {
-        bottom: $position-5-top;
-        left: $position-5-left;
-        @include transform(rotate($egg-tilt-5));
-      }
-
-      &.position-6 {
-        bottom: $position-6-top;
-        left: $position-6-left;
-        @include transform(rotate($egg-tilt-6));
-      }
+      &.position-1 { @include item-position($position-1-top, $position-1-left, $egg-tilt-1); }
+      &.position-2 { @include item-position($position-2-top, $position-2-left, $egg-tilt-2); }
+      &.position-3 { @include item-position($position-3-top, $position-3-left, $egg-tilt-3); }
+      &.position-4 { @include item-position($position-4-top, $position-4-left, $egg-tilt-4); }
+      &.position-5 { @include item-position($position-5-top, $position-5-left, $egg-tilt-5); }
+      &.position-6 { @include item-position($position-6-top, $position-6-left, $egg-tilt-6); }
     }
   }
 
   &.belt-3,
   &.belt-4 {
     .item {
-      &.position-1 {
-        bottom: $position-1-top;
-        right: $position-1-left;
-        @include transform(rotate(-$egg-tilt-1));
-      }
-
-      &.position-2 {
-        bottom: $position-2-top;
-        right: $position-2-left;
-        @include transform(rotate(-$egg-tilt-2));
-      }
-
-      &.position-3 {
-        bottom: $position-3-top;
-        right: $position-3-left;
-        @include transform(rotate(-$egg-tilt-3));
-      }
-
-      &.position-4 {
-        bottom: $position-4-top;
-        right: $position-4-left;
-        @include transform(rotate(-$egg-tilt-4));
-      }
-
-      &.position-5 {
-        bottom: $position-5-top;
-        right: $position-5-left;
-        @include transform(rotate(-$egg-tilt-5));
-      }
-
-      &.position-6 {
-        bottom: $position-6-top;
-        right: $position-6-left;
-        @include transform(rotate(-$egg-tilt-6));
-      }
+      &.position-1 { @include item-position($position-1-top, $position-1-left, $egg-tilt-1, 'right'); }
+      &.position-2 { @include item-position($position-2-top, $position-2-left, $egg-tilt-2, 'right'); }
+      &.position-3 { @include item-position($position-3-top, $position-3-left, $egg-tilt-3, 'right'); }
+      &.position-4 { @include item-position($position-4-top, $position-4-left, $egg-tilt-4, 'right'); }
+      &.position-5 { @include item-position($position-5-top, $position-5-left, $egg-tilt-5, 'right'); }
+      &.position-6 { @include item-position($position-6-top, $position-6-left, $egg-tilt-6, 'right'); }
     }
   }
 }
