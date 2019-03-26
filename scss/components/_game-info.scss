@@ -1,8 +1,8 @@
 .game-info {
   top: 0;
   left: 0;
-  min-height: 2em;
   width: 100%;
+  min-height: 2em;
   padding: .5em .2em;
 
   > * {
@@ -12,6 +12,7 @@
 
   h2 {
     margin: 0 .5em;
+    font-weight: 400;
   }
 }
 

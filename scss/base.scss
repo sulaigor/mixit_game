@@ -11,7 +11,8 @@ html { box-sizing: border-box; }
 body {
   position: relative;
   font-size: 100%;
-  font-family: 'Trykker', serif;
+  font-family: $main-font;
+  font-weight: 400;
   max-width: 75%;
   background: $main-bg url("../img/page-bg.svg");
   background-size: 10%;
@@ -19,12 +20,14 @@ body {
 }
 
 h1 {
-  font-family: 'Molle', cursive;
+  font-family: $main-font;
+  font-weight: 700;
   text-align: center;
 }
 
-a {
-  font-family: Tahoma, Verdana, Segoe, sans-serif;
+a, button {
+  font-family: $main-font;
+  font-weight: 700;
 }
 
 @import "parts";

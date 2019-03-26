@@ -1,6 +1,7 @@
 .high-score {
   display: none;
   color: lighten(#111, 20%);
+  font-weight: 400;
 
   #high-score { color: #111; }
   &.visible { display: block; }
