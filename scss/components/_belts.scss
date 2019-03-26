@@ -1,7 +1,9 @@
 .belt {
   height: 2em;
-  background: #000;
   width: 10em;
+  background: #000;
+  background-size: 100%;
+  background-repeat: no-repeat;
 
   &.belt-1, &.belt-4 { top: $belt-first-level-top; }
   &.belt-2, &.belt-3 { top: $belt-second-level-top; }
@@ -11,21 +13,7 @@
     left: 0;
     border-radius: 0 $belt-radius $belt-radius 0;
     @include transform(rotate($belts-tilt));
-  }
 
-  &.belt-3,
-  &.belt-4 {
-    right: 0;
-    border-radius: $belt-radius 0 0 $belt-radius;
-    @include transform(rotate(-$belts-tilt));
-  }
-
-  .item {
-    position: absolute;
-  }
-
-  &.belt-1,
-  &.belt-2 {
     .item {
       &.position-1 { @include item-position($position-1-top, $position-1-left, $egg-tilt-1); }
       &.position-2 { @include item-position($position-2-top, $position-2-left, $egg-tilt-2); }
@@ -38,13 +26,23 @@
 
   &.belt-3,
   &.belt-4 {
-    .item {
-      &.position-1 { @include item-position($position-1-top, $position-1-left, $egg-tilt-1, 'right'); }
-      &.position-2 { @include item-position($position-2-top, $position-2-left, $egg-tilt-2, 'right'); }
-      &.position-3 { @include item-position($position-3-top, $position-3-left, $egg-tilt-3, 'right'); }
-      &.position-4 { @include item-position($position-4-top, $position-4-left, $egg-tilt-4, 'right'); }
-      &.position-5 { @include item-position($position-5-top, $position-5-left, $egg-tilt-5, 'right'); }
-      &.position-6 { @include item-position($position-6-top, $position-6-left, $egg-tilt-6, 'right'); }
-    }
+    @extend .belt-1;
+    left: unset;
+    right: 0;
+    @include transform(rotate(-$belts-tilt) rotateY(180deg));
+  }
+
+  &.belt-1,
+  &.belt-4 {
+    //background-image: url('../img/vetev1.png');
+  }
+
+  &.belt-2,
+  &.belt-3 {
+    //background-image: url('../img/vetev2.png');
+  }
+
+  .item {
+    position: absolute;
   }
 }
