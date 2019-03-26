@@ -1,7 +1,6 @@
 .belt {
-  height: 2em;
-  width: 10em;
-  background: #000;
+  width: $belt-width;
+  height: $belt-height;
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -10,7 +9,7 @@
 
   &.belt-1,
   &.belt-2 {
-    left: 0;
+    left: $belt-left;
     border-radius: 0 $belt-radius $belt-radius 0;
     @include transform(rotate($belts-tilt));
 
@@ -28,19 +27,12 @@
   &.belt-4 {
     @extend .belt-1;
     left: unset;
-    right: 0;
+    right: $belt-left;
     @include transform(rotate(-$belts-tilt) rotateY(180deg));
   }
 
-  &.belt-1,
-  &.belt-4 {
-    //background-image: url('../img/vetev1.png');
-  }
-
-  &.belt-2,
-  &.belt-3 {
-    //background-image: url('../img/vetev2.png');
-  }
+  &.belt-1, &.belt-4 { background-image: url('../img/vetev-1.png'); }
+  &.belt-2, &.belt-3 { background-image: url('../img/vetev-2.png'); }
 
   .item {
     position: absolute;

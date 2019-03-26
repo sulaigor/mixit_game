@@ -5,8 +5,8 @@ $main-font: 'Roboto Slab', serif;
 // START: player's variables
 $player-width: 4em;
 $player-height: $player-width * 2;
-$player-right: 10em;
-$player-left: 6em;
+$player-left: 6.5em;
+$player-right: 10.5em;
 $player-banner-left: 10em;
 // END: size variables
 
@@ -20,30 +20,33 @@ $moving-btn-left: 100%;
 $moving-btn-radius: 4em;
 
 // belts
-$belt-first-level-top: 30%;
-$belt-second-level-top: 58%;
+$belt-width: 12em;
+$belt-height: 3em;
+$belt-first-level-top: 25%;
+$belt-second-level-top: 52%;
+$belt-left: -12px;
 $belts-tilt: 20deg;
 $belt-radius: 1em;
 
 // cracks
-$crack-first-level-top: $belt-first-level-top + 15%;
-$crack-second-level-top: $belt-second-level-top + 15%;
-$crack-egg-left: 11em;
+$crack-first-level-top: $belt-first-level-top + 18%;
+$crack-second-level-top: $belt-second-level-top + 18%;
+$crack-egg-left: $belt-width + .5em;
 
 // items
-$position-1-top: 100%;
-$position-2-top: 105%;
-$position-3-top: 100%;
-$position-4-top: 105%;
-$position-5-top: 85%;
-$position-6-top: 0%;
+$position-1-top: 90%;
+$position-2-top: 95%;
+$position-3-top: 90%;
+$position-4-top: 95%;
+$position-5-top: 80%;
+$position-6-top: 10%;
 
-$position-1-left: -5%;
+$position-1-left: 0%;
 $position-2-left: 20%;
 $position-3-left: 45%;
 $position-4-left: 70%;
 $position-5-left: 95%;
-$position-6-left: 105%;
+$position-6-left: 110%;
 
 $egg-tilt-1: 10deg;
 $egg-tilt-2: 120deg;
