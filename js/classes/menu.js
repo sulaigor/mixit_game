@@ -41,12 +41,13 @@ export default class Menu {
     {
       button.addEventListener('touchstart', () => {
         button.classList.add('click');
-        setTimeout(() => button.classList.remove('click'), 250);
         if(button.classList.contains('position-1')) document.dispatchEvent(this.playerPosition_1);
         if(button.classList.contains('position-2')) document.dispatchEvent(this.playerPosition_2);
         if(button.classList.contains('position-3')) document.dispatchEvent(this.playerPosition_3);
         if(button.classList.contains('position-4')) document.dispatchEvent(this.playerPosition_4);
       });
+      button.addEventListener('touchend', () =>
+        setTimeout(() => button.classList.remove('click'), 200));
     }
   }
 
@@ -151,7 +152,7 @@ export default class Menu {
         this.game.getPlayer().wave();
       }, 500);
     });
-    startBtn.addEventListener('touchstart', () => {
+    startBtn.addEventListener('click', () => {
       startBtn.classList.add('click');
       setTimeout(() => startBtn.classList.remove('click'), 250);
     });
