@@ -1,8 +1,8 @@
 .high-score {
   display: none;
-  color: lighten(#111, 20%);
+  color: $game-info-color;
   font-weight: 400;
 
-  #high-score { color: #111; }
+  #high-score { color: darken($game-info-color, 20%); }
   &.visible { display: block; }
 }

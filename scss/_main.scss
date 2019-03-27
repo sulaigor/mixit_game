@@ -3,7 +3,8 @@
   width: 100%;
   min-height: 35em;
   margin: 0 auto;
-  background: $game-bg;
+  background: $game-bg url("../img/game-bg.jpg") bottom center no-repeat;
+  background-size: cover;
   border: 2px solid #000;
   border-radius: .3em;
   //cursor: none;
@@ -12,14 +13,14 @@
     position: absolute;
   }
 
-  .game-bg {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: url("../img/game-bg.png") bottom center no-repeat;
-    background-size: cover;
-  }
+  //.game-bg {
+  //  width: 100%;
+  //  height: 100%;
+  //  top: 0;
+  //  left: 0;
+  //  background: ;
+  //  //background: $game-info-color;
+  //}
 
   @import "components/belts";
   @import "components/crack";

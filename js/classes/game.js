@@ -130,7 +130,8 @@ export default class Game {
       this.setScore();
       this.generateItems(1);
 
-      if(this.intervalTime <= 0 || this.lives == 0) {
+      if(this.intervalTime <= 0 || this.lives == 0)
+      {
         this.stopGame();
         this.clearItems();
         this.setPlayerPosition(5);

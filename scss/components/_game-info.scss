@@ -12,6 +12,7 @@
 
   h2 {
     margin: 0 .5em;
+    color: $game-info-color;
     font-weight: 400;
   }
 }
@@ -26,7 +27,7 @@
     height: 1.2em;
     margin-right: .5em;
     margin-bottom: -.2em;
-    background: #000;
+    background: $game-info-color;
     border-radius: .2em;
 
     &:last-child {

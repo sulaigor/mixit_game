@@ -76,8 +76,8 @@ export default class Menu {
 
   initGameOverEvent() {
     document.addEventListener('gameover', () => {
-      this.setStartBannerText('Game Over');
-      this.startBannerDomElem.classList.add('active');
+      // this.setStartBannerText('Game Over');
+      this.startBannerDomElem.classList = 'banner active game-over';
       this.game.getPlayer().reset();
       this.setButtonText('start-btn', 'New game');
       this.game = null;
