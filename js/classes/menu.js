@@ -76,13 +76,19 @@ export default class Menu {
 
   initGameOverEvent() {
     document.addEventListener('gameover', () => {
-      // this.setStartBannerText('Game Over');
       this.startBannerDomElem.classList = 'banner active game-over';
       this.game.getPlayer().reset();
-      this.setButtonText('start-btn', 'New game');
       this.game = null;
       this.setCrackEggsHidden();
+      this.showDiscountMessage();
     });
+  }
+
+  showDiscountMessage() {
+    let discountMessage = document.getElementById('discount-message');
+    let score = +this.startBannerDomElem.querySelector('.score').textContent;
+    if(discountMessage.classList.contains('active')) discountMessage.classList.remove('active');
+    if(score >= 1500) discountMessage.classList.add('active');
   }
 
   setKeyInputSelector(keyInputSelector) {
@@ -152,7 +158,7 @@ export default class Menu {
         this.game.getPlayer().wave();
       }, 500);
     });
-    startBtn.addEventListener('click', () => {
+    startBtn.addEventListener('touchstart', () => {
       startBtn.classList.add('click');
       setTimeout(() => startBtn.classList.remove('click'), 250);
     });
@@ -186,7 +192,7 @@ export default class Menu {
     for(let button of buttons)
       button.addEventListener('click', () =>
       {
-        this.controlsBannerDomElem.classList.toggle('show-input')
+        this.controlsBannerDomElem.classList.toggle('show-input');
         if(button.id == saveBtnId)
           localStorage.setItem(btoa('controls'), btoa(JSON.stringify(this.controls)));
       });

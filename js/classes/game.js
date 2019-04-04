@@ -13,7 +13,7 @@ export default class Game {
     this.intervalTime = 1000;
     this.catchedItems = 0;
     this.lives = 10;
-    this.livesDomElem = document.querySelector(this.gameSelector + ' ' + this.livesSelector);
+    this.livesDomElem = document.querySelector(this.livesSelector);
     this.gameOverEvent = new Event('gameover');
     this.gameInterval = null;
     this.controls = null;
@@ -81,12 +81,13 @@ export default class Game {
   }
 
   setScore() {
-    document.querySelector(this.scoreSelector).textContent = this.catchedItems * 10;
+    for(let scoreWrapper of document.querySelectorAll(this.scoreSelector)) scoreWrapper.textContent = this.catchedItems * 10;
   }
 
-  saveHighestScore() {
+  saveHighScore() {
     let score = this.catchedItems * 10;
-    if(atob(localStorage.getItem(btoa('highScore'))) < score)
+    let savedHighScore = localStorage.getItem(btoa('highScore'));
+    if(!savedHighScore || atob(savedHighScore) < score)
       localStorage.setItem(btoa('highScore'), btoa(score));
   }
 
@@ -135,7 +136,7 @@ export default class Game {
         this.stopGame();
         this.clearItems();
         this.setPlayerPosition(5);
-        this.saveHighestScore();
+        this.saveHighScore();
         document.dispatchEvent(this.gameOverEvent);
         this.removePlayerMoving();
       }

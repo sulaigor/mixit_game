@@ -36,31 +36,34 @@
   }
 
   .ket, .key-input {
+    font-size: 150%;
+    font-family: $main-font;
     font-weight: 400;
+    color: $red-color;
+    padding-bottom: .02em;
+    text-transform: uppercase;
+    border-bottom: .02em solid transparent;
   }
 
   .key {
-    font-size: 150%;
-    color: $red-color;
     margin-left: .5em;
-    padding-bottom: .02em;
-    text-transform: uppercase;
+    border-bottom: none;
   }
 
   .key-input {
-    @extend .key;
     display: none;
     width: 1.5em;
     height: 1.4em;
     margin-left: .3em;
     padding: 0 0 0 .2em;
-    font-family: $main-font;
     background: none;
     border: none;
     border-bottom: .02em solid #000;
 
     &::placeholder {
       color: $red-color;
+      opacity: 1;
+      border-bottom: none;
     }
 
     &:focus {

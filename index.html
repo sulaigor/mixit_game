@@ -8,7 +8,20 @@
   <link rel="stylesheet" href="css/style.css">
   <script defer type="module" src="js/app.js"></script>
 </head>
+
 <body>
+<button class="moving-btn position-1">
+  <span class="arrow"></span>
+</button>
+<button class="moving-btn position-2">
+  <span class="arrow"></span>
+</button>
+<button class="moving-btn position-3">
+  <span class="arrow"></span>
+</button>
+<button class="moving-btn position-4">
+  <span class="arrow"></span>
+</button>
 
 <header class="header">
   <h1 class="main-headline">
@@ -33,41 +46,10 @@
     </div>
   </div>
 
-  <div class="belt belt-1">
-    <!--<div class="item egg-1 belt-1 position-1"></div>-->
-    <!--<div class="item egg-1 belt-1 position-2"></div>-->
-    <!--<div class="item egg-1 belt-1 position-3"></div>-->
-    <!--<div class="item egg-1 belt-1 position-4"></div>-->
-    <!--<div class="item egg-1 belt-1 position-5"></div>-->
-    <!--<div class="item egg-1 belt-1 position-6"></div>-->
-  </div>
-
-  <div class="belt belt-2">
-    <!--<div class="item egg-2 belt-2 position-1"></div>-->
-    <!--<div class="item egg-2 belt-2 position-2"></div>-->
-    <!--<div class="item egg-2 belt-2 position-3"></div>-->
-    <!--<div class="item egg-2 belt-2 position-4"></div>-->
-    <!--<div class="item egg-2 belt-2 position-5"></div>-->
-    <!--<div class="item egg-2 belt-2 position-6"></div>-->
-  </div>
-
-  <div class="belt belt-3">
-    <!--<div class="item egg-3 belt-3 position-1"></div>-->
-    <!--<div class="item egg-3 belt-3 position-2"></div>-->
-    <!--<div class="item egg-3 belt-3 position-3"></div>-->
-    <!--<div class="item egg-3 belt-3 position-4"></div>-->
-    <!--<div class="item egg-3 belt-3 position-5"></div>-->
-    <!--<div class="item egg-3 belt-3 position-6"></div>-->
-  </div>
-
-  <div class="belt belt-4">
-    <!--<div class="item egg-4 belt-4 position-1"></div>-->
-    <!--<div class="item egg-4 belt-4 position-2"></div>-->
-    <!--<div class="item egg-4 belt-4 position-3"></div>-->
-    <!--<div class="item egg-4 belt-4 position-4"></div>-->
-    <!--<div class="item egg-4 belt-4 position-5"></div>-->
-    <!--<div class="item egg-4 belt-4 position-6"></div>-->
-  </div>
+  <div class="belt belt-1"></div>
+  <div class="belt belt-2"></div>
+  <div class="belt belt-3"></div>
+  <div class="belt belt-4"></div>
 
   <div class="crack-egg position-1">
     <img src="" alt="Crack position 1">
@@ -88,14 +70,15 @@
     <div class="player-hand right"></div>
   </div>
 
+  <h2 class="high-score">High score: <span id="high-score"></span></h2>
 </main>
 
 <footer class="footer">
-  <h2 class="high-score">Highest score: <span id="high-score"></span></h2>
 </footer>
 
 <div id="message-banner" class="banner active">
   <section class="banner-content">
+    <div class="container">
     <h1 class="main-headline">
       <div class="firts-word">
         <span class="orange">Mixit</span>&nbsp;
@@ -116,10 +99,29 @@
         <span class="orange">y</span>
       </div>
     </h1>
+    </div>
     <div class="buttons">
-      <button id="start-btn" class="btn">Start</button>
+      <button id="start-btn" class="btn">
+        <span class="init-game">Start</span>
+        <span class="new-game">New game</span>
+      </button>
       <button id="stop-btn" class="btn">Stop</button>
       <button id="controls-btn" class="btn">Controls</button>
+    </div>
+    <div class="score-wrapper">
+      <h2><%= t(".your_score") %>: <span class="score">0</span></h2>
+      <p id="discount-message">
+        <span class="enough"><%= t('.enough') %></span>
+        <span class="not-enough"><%= t('.not_enough') %></span>
+      </p>
+    </div>
+    <div class="flags">
+      <a target="_blank" id="mixit-page-link" href="/">
+        Jít na <span>Mixit.cz</span>
+      </a>
+      <a target="_blank" id="easter-page-link" href="/velikonoce">
+        Jít na <span>Velikonoční Mixit</span>
+      </a>
     </div>
   </section>
 </div>
@@ -198,21 +200,25 @@
 
 <div id="preload-images">
   <!--Egg images-->
-  <img src="img/egg-1.png">
-  <img src="img/egg-2.png">
-  <img src="img/egg-3.png">
-  <img src="img/egg-4.png">
-  <img src="img/egg-5.png">
-  <img src="img/egg-6.png">
-  <img src="img/egg-7.png">
+  <div id="egg-images">
+    <img src="img/egg-1.png">
+    <img src="img/egg-2.png">
+    <img src="img/egg-3.png">
+    <img src="img/egg-4.png">
+    <img src="img/egg-5.png">
+    <img src="img/egg-6.png">
+    <img src="img/egg-7.png">
+  </div>
   <!--Crack egg animation-->
-  <img src="img/crack-egg-1.gif">
-  <img src="img/crack-egg-2.gif">
-  <img src="img/crack-egg-3.gif">
-  <img src="img/crack-egg-4.gif">
-  <img src="img/crack-egg-5.gif">
-  <img src="img/crack-egg-6.gif">
-  <img src="img/crack-egg-7.gif">
+  <div id="crack-egg-images">
+    <img class="egg-1" src="img/crack-egg-1.gif">
+    <img class="egg-2" src="img/crack-egg-2.gif">
+    <img class="egg-3" src="img/crack-egg-3.gif">
+    <img class="egg-4" src="img/crack-egg-4.gif">
+    <img class="egg-5" src="img/crack-egg-5.gif">
+    <img class="egg-6" src="img/crack-egg-6.gif">
+    <img class="egg-7" src="img/crack-egg-7.gif">
+  </div>
 </div>
 
 </body>

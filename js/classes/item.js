@@ -6,12 +6,16 @@ export default class Item {
     this.beltPosition = beltPosition;
     this.removed = false;
     this.catched = false;
-    this.crackGifSrc = 'img/crack-' + this.type + '.gif';
+    this.crackGifSrc = this.getGifSrc();
     this.actualPosition = 1;
     this.lastPosition = 6;
     this.domElem = this.createDomElem();
 
     this.crackEgg = new CrackEgg(this.beltPosition, 500);
+  }
+
+  getGifSrc() {
+    return document.getElementById('crack-egg-images').querySelector('.' + this.type).src;
   }
 
   getItemType() {

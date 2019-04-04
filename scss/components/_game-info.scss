@@ -12,12 +12,13 @@
 
   h2 {
     margin: 0 .5em;
-    color: $game-info-color;
     font-weight: 400;
   }
 }
 
 .lives-wrapper {
+  color: $game-info-color;
+
   > * {
     display: inline-block;
   }
@@ -37,6 +38,8 @@
 }
 
 .score-wrapper {
+  color: $game-info-color;
+
   .score {
     color: $red-color;
     letter-spacing: .08em;

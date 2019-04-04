@@ -13,11 +13,13 @@ body {
   font-size: 100%;
   font-family: $main-font;
   font-weight: 400;
-  max-width: 80%;
+  max-width: 100%;
+  min-width: 559px;
   background: $main-bg url("../img/page-bg.jpg") no-repeat center top;
-  //background: $game-info-color;
-  background-size: 100%;
+  background-size: cover;
   margin: 0 auto;
+
+  #preload-images { display: none; }
 }
 
 h1 {
@@ -31,9 +33,17 @@ a, button {
   font-weight: 700;
 }
 
+@import "components/banner";
+@import "components/belts";
+@import "components/crack";
+@import "components/flags";
+@import "components/game-info";
+@import "components/high-score";
+@import "components/item";
+@import "components/key-setter";
+@import "components/main-headline";
+@import "components/moving-btn";
+@import "components/player";
 @import "parts";
 @import "main";
-@import "components/banner";
-@import "components/high-score";
-@import "components/main-headline";
-@import "components/phone";
+@import "media";

@@ -1,5 +1,6 @@
 .item {
   @include transition(.15s, ease-out);
+  font-size: 140%;
 
   &.egg-1 {
     width: 1.5em;
@@ -38,30 +39,5 @@
   &.egg-7 {
     @extend .egg-1;
     background-image: url('../img/egg-7.png');
-  }
-
-  &.mix {
-    width: 2em;
-    height: 1em;
-    background: #000;
-    border-radius: .5em;
-  }
-
-  &.fruit {
-    @extend .mix;
-    width: 1em;
-    margin-left: .5em;
-    border-radius: 50%;
-  }
-
-  &.box {
-    @extend .fruit;
-    border-radius: 0;
-  }
-
-  &.bowl {
-    @extend .fruit;
-    width: 1.5em;
-    border-radius: 0 0 .5em .5em;
   }
 }

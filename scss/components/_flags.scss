@@ -1,0 +1,47 @@
+.flags {
+  position: absolute;
+  top: 1em;
+  right: 0;
+  width: 23em;
+  max-height: 8em;
+  z-index: 120;
+
+  a {
+    font-size: 1.4em;
+    display: block;
+    padding: 1em 0 .9em 2em;
+    color: #fff;
+    margin-bottom: .2em;
+    text-decoration: none;
+    text-align: center;
+    border-radius: .8em 0 0 .8em;
+    background-size: 17%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+
+    @include transition(.3s);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover,
+    &:focus {
+      color: #bbb;
+    }
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  #mixit-page-link {
+    background-color: $main-page-bg;
+    background-image: url('../img/onlybird.png');
+  }
+
+  #easter-page-link {
+    background-color: $easter-page-bg;
+    padding: 1em 0 .9em;
+  }
+}

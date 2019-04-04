@@ -5,21 +5,83 @@
   width: 100%;
   height: 100%;
   background: rgba(#000, .8);
-  z-index: 10;
+  z-index: 100;
   @include transition(.5s, ease-out);
 
   &.active { bottom: 0; }
 
   .banner-content {
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 5em 0;
+    padding: 0;
     background: $game-bg url("../img/init-bg.jpg") no-repeat center bottom;
-    //background: $game-info-color;
-    background-size: 100%;
+    background-size: cover;
     border: 4px solid $main-color;
     border-radius: .3em;
+
+    .score-wrapper {
+      display: none;
+      font-size: 200%;
+      width: 80%;
+      margin: 1.5em auto 0 auto;
+      background: lighten($control-bnt-bg, 15%);
+      text-align: center;
+      border: 1px solid #fff;
+      border-radius: .6em;
+
+      h2 {
+        margin: .2em 0;
+      }
+
+      #discount-message {
+        .enough { display: none; }
+
+        &.active {
+          .enough { display: block; }
+          .not-enough { display: none; }
+        }
+      }
+
+      .score {
+        margin-left: .2em;
+      }
+    }
+
+    .fb-share-button {
+      display: none;
+      width: 80%;
+      padding: .5em 0;
+      margin: 0 auto;
+
+      .btn {
+        background: $facebook-btn-bg;
+        margin: 0 5em;
+        padding: .8em 0 .7em;
+      }
+    }
+  }
+
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 50%;
+    height: 90%;
+  }
+
+  .circle-logo {
+    display: none;
+    width: 15em;
+    margin: 0 auto;
   }
 
   h1 {
@@ -29,6 +91,7 @@
   }
 
   .buttons {
+    font-size: 80%;
     text-align: center;
   }
 
@@ -39,7 +102,7 @@
     margin: 0 auto .25em;
     padding: .3em 1em .4em;
     border: .02em solid $main-color;
-    border-radius: .3em;
+    border-radius: .6em;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
@@ -60,8 +123,26 @@
     &:last-child { margin-bottom: 0; }
   }
 
-  #start-btn { font-size: 5em; }
-  #controls-btn { font-size: 3em; }
+  #controls-btn {
+    font-size: 3em;
+    padding: .2em 1.5em .1em;
+    background: $control-bnt-bg;
+
+    &:hover,
+    &.click {
+      color: #555;
+      background: #fff;
+    }
+  }
+
+  #start-btn {
+    font-size: 5em;
+
+    .new-game {
+      display: none;
+    }
+  }
+
   #stop-btn { display: none; }
 }
 
@@ -71,8 +152,20 @@
       display: none;
 
       &.game-over {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
       }
+    }
+
+    .banner-content {
+      .score-wrapper { display: block; }
+      .fb-share-button { display: block; }
+    }
+
+    #start-btn {
+      .init-game { display: none; }
+      .new-game { display: block; }
     }
   }
 }
@@ -80,7 +173,12 @@
 #controls-banner {
   top: 100%;
   background: $banner-bg;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 
   &.active { top: 0; }
@@ -118,7 +216,6 @@
       font-size: 2.5em;
       top: 0;
       margin: 0;
-      //border-color: #000;
       z-index: 15;
     }
 
@@ -135,11 +232,18 @@
   }
 
   .banner-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    height: 15em;
 
     background: rgba($banner-btn-bg, .75) url("../img/page-bg.jpg");
     background-size: 60%;
@@ -152,10 +256,11 @@
   }
 
   .main {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     cursor: default;
-
-    @import "key-setter";
+    max-width: unset;
 
     .player {
       font-size: 160%;

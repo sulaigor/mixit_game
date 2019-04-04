@@ -1,0 +1,265 @@
+@media screen and (orientation: portrait) {
+  body.landing-page.mixit-game {
+    @include transform(rotate(90deg));
+    @include transform-origin(left top);
+    max-width: unset;
+    width: 100vh;
+    height: 100vw;
+    position: absolute;
+    top: 0;
+    left: 100%;
+
+    .main {
+      width: 80vh;
+      height: 100vw;
+    }
+
+    .moving-btn {
+      width: #{delete-unit($moving-btn-width) + 'vh'};
+      height: #{delete-unit($moving-btn-height) + 'vw'};
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .banner {
+    .container {
+      font-size: 90%;
+      margin-left: 2.5em;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .banner {
+    .container {
+      font-size: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .banner {
+    .container {
+      font-size: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .banner {
+    .banner-content {
+      background-position: center bottom;
+
+      .flags {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 100%;
+        top: 0;
+
+        > * {
+          width: 40%;
+          margin-bottom: 0;
+        }
+
+        #mixit-page-link {
+          border-radius: 0 .8em .8em 0;
+          background-position: 97% center;
+          padding: 1em 2em .9em 0;
+        }
+      }
+    }
+
+    .container {
+      font-size: 50%;
+      height: 100%;
+      margin-top: 70px;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+
+      .circle-logo {
+        display: none;
+      }
+
+      .main-headline {
+        font-size: 6em;
+      }
+
+      #start-btn {
+        font-size: 6em;
+      }
+    }
+
+    #controls-btn {
+      display: none;
+    }
+  }
+
+  #controls-banner {
+    display: none;
+  }
+
+  .flags {
+    font-size: 80%;
+  }
+
+  .header {
+    height: $header-phone-height;
+
+    h1 {
+      font-size: 2em;
+    }
+  }
+
+  .main {
+    width: $main-phone-width;
+    height: $main-phone-height;
+    min-height: unset;
+    border: 1px solid $moving-btn-border-color;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+
+    .player {
+      font-size: 130%;
+
+      &.position-1, &.position-4 { top: 5.5em; }
+      &.position-1, &.position-2 { left: 9em; }
+      &.position-2, &.position-3 { top: calc(100% - 8em) }
+      &.position-3, &.position-4 { left: calc(100% - 13em) }
+    }
+
+    .belt {
+      font-size: 95%;
+    }
+
+    .crack-egg {
+      font-size: 105%;
+
+      &.position-1, &.position-2 { left: calc(#{$belt-width} + 1%); }
+      &.position-3, &.position-4 { left: unset; right: calc(#{$belt-width} - 3%); }
+    }
+
+    .item {
+      font-size: 125%;
+    }
+
+    .game-info {
+      font-size: 80%;
+    }
+
+    .high-score {
+      font-size: 100%;
+      top: unset;
+      bottom: 0;
+      margin: 0 0 .3em .3em;
+    }
+  }
+
+  .moving-btn {
+    display: block;
+  }
+
+  .flags {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    .banner-content {
+      background-position: 80% bottom;
+    }
+
+    .container {
+      font-size: 40%;
+
+      #start-btn {
+        font-size: 6em;
+      }
+    }
+  }
+
+  .main {
+    .player {
+      font-size: 120%;
+
+      &.position-1, &.position-4 { top: 5.5em; }
+      &.position-1, &.position-2 { left: 8.5em; }
+      &.position-2, &.position-3 { top: calc(100% - 8em) }
+      &.position-3, &.position-4 { left: calc(100% - 12em) }
+    }
+
+    .belt {
+      font-size: 75%;
+    }
+
+    .crack-egg {
+      font-size: 85%;
+
+      &.position-1, &.position-2 { left: calc(#{$belt-width} - 1%); }
+      &.position-3, &.position-4 { left: unset; right: calc(#{$belt-width} - 4%); }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .banner {
+    .banner-content {
+      background-position: 0 bottom;
+
+      .flags {
+        font-size: 80%;
+      }
+    }
+
+    .container {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .banner {
+    .banner-content {
+      .flags {
+        font-size: 60%;
+      }
+    }
+
+    .container {
+      font-size: 35%;
+    }
+  }
+
+  .main {
+    .player {
+      font-size: 100%;
+
+      &.position-1, &.position-4 { top: 6em; }
+      &.position-1, &.position-2 { left: 8em; }
+      &.position-2, &.position-3 { top: calc(100% - 8em) }
+      &.position-3, &.position-4 { left: calc(100% - 12em) }
+    }
+
+    .belt {
+      font-size: 60%;
+    }
+
+    .crack-egg {
+      font-size: 70%;
+
+      &.position-1, &.position-2 { left: calc(#{$belt-width} - 1%); }
+      &.position-3, &.position-4 { left: unset; right: calc(#{$belt-width} - 4%); }
+    }
+  }
+}

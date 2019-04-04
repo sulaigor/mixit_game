@@ -8,7 +8,6 @@
   z-index: 100;
 
   &.click {
-    -webkit-box-shadow: inset 0px 0px 20px -2px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 20px -2px rgba(0,0,0,0.75);
 
     .arrow { opacity: 1; }
@@ -30,7 +29,7 @@
   }
 
   &.position-1 {
-    top: 0;
+    top: $header-phone-height;
     left: 0;
     border-radius: $moving-btn-radius 0 0 0;
     border-bottom: none;

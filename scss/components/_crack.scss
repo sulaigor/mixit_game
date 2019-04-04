@@ -3,10 +3,9 @@
   width: 2.5em;
   height: 3em;
   margin-left: -1.5em;
+  font-size: 135%;
 
-  &.active {
-    display: block;
-  }
+  &.active { display: block; }
 
   &.position-1 {
     top: $crack-first-level-top;
@@ -21,13 +20,13 @@
   &.position-3 {
     @extend .position-2;
     left: unset;
-    right: $crack-egg-left - 1em;
+    right: $crack-egg-right;
   }
 
   &.position-4 {
     @extend .position-1;
     left: unset;
-    right: $crack-egg-left - 1em;
+    right: $crack-egg-right;
   }
 
   img {

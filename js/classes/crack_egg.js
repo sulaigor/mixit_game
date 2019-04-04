@@ -3,18 +3,18 @@ export default class CrackEgg {
     this.position = position;
     this.hiddenTime = hiddenTime;
     this.domElem = document.querySelector('.crack-egg.position-' + this.position);
-    this.gifElem = this.domElem.querySelector('img');
   }
 
   activate(src) {
-    this.gifElem.src = src;
+    let image = this.domElem.querySelector('img');
+    image.src = src;
+    // this.domElem.append(image);
     this.domElem.classList.add('active');
     setTimeout(() => {
       this.domElem.classList.remove('active');
       // TODO problem 404
-      this.gifElem.src = null;
-      // this.gifElem.src = '';
-      // this.gifElem.src = 'img/crack-egg-default.png';
+      image.src = null;
+      // image.remove();
     }, this.hiddenTime);
   }
 }

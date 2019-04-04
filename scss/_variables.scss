@@ -15,7 +15,14 @@ $bad-input-translate: 50px;
 // END: key setter variables
 
 // START: position of belts, cracks and items variables
+// main
+$main-phone-width: 80%;
+$main-phone-height: 100vh;
+$header-phone-height: 100vh - $main-phone-height;
+
 // moving button
+$moving-btn-width: (100% - $main-phone-width) / 2;
+$moving-btn-height: $main-phone-height / 2;
 $moving-btn-left: 100%;
 $moving-btn-radius: 4em;
 
@@ -31,7 +38,8 @@ $belt-radius: 1em;
 // cracks
 $crack-first-level-top: $belt-first-level-top + 18%;
 $crack-second-level-top: $belt-second-level-top + 18%;
-$crack-egg-left: $belt-width + .5em;
+$crack-egg-left: calc(#{$belt-width} - 5%);
+$crack-egg-right: calc(#{$belt-width} - 8%);
 
 // items
 $position-1-top: 90%;
@@ -59,9 +67,10 @@ $egg-tilt-6: 470deg;
 // START: colors variables
 $main-color: #eee;
 $main-bg: #ffe9bf;
-$game-bg: #B1E1EF;
+$game-bg: #A8DDED;
 $red-color: #BA3523;
 $game-info-color: #512d15;
+$facebook-btn-bg: #4B72BB;
 
 // moving button
 $moving-btn-bg: #ccc;
@@ -75,5 +84,10 @@ $headline-blue: #49BBE6;
 
 // banner
 $banner-bg: #191919;
-$banner-btn-bg: #F6AF32;
+$banner-btn-bg: #f65a03;
+$control-bnt-bg: #F5A404;
+
+// flags
+$main-page-bg: #5D2A00;
+$easter-page-bg: #DF3C15;
 // END: colors variables

@@ -22,3 +22,4 @@ menu.setKeyInputSelector('.key-input');
 menu.setActiveSettingBtn('change-setting-btn', 'save-setting-btn');
 
 menu.initPlayerMovingByKyboard();
+menu.initPlayerMovingByButtons();
