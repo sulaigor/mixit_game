@@ -4,7 +4,7 @@
   align-items: center;
   height: 2em;
   margin: 0;
-  font-weight: 400;
+  font-weight: 700;
 
   &.position-1 {
     top: 4em;
@@ -35,7 +35,7 @@
     font-size: 90%;
   }
 
-  .ket, .key-input {
+  .key, .key-input {
     font-size: 150%;
     font-family: $main-font;
     font-weight: 400;

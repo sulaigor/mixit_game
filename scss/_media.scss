@@ -1,5 +1,5 @@
 @media screen and (orientation: portrait) {
-  body.landing-page.mixit-game {
+  body {
     @include transform(rotate(90deg));
     @include transform-origin(left top);
     max-width: unset;
@@ -52,15 +52,8 @@
       background-position: center bottom;
 
       .flags {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
         flex-direction: row;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
         justify-content: space-between;
         width: 100%;
         top: 0;
@@ -82,8 +75,6 @@
       font-size: 50%;
       height: 100%;
       margin-top: 70px;
-      -webkit-box-pack: start;
-      -ms-flex-pack: start;
       justify-content: flex-start;
 
       .circle-logo {
@@ -109,7 +100,7 @@
   }
 
   .flags {
-    font-size: 80%;
+    font-size: 180%;
   }
 
   .header {
@@ -218,7 +209,7 @@
       background-position: 0 bottom;
 
       .flags {
-        font-size: 80%;
+        font-size: 180%;
       }
     }
 
@@ -232,7 +223,7 @@
   .banner {
     .banner-content {
       .flags {
-        font-size: 60%;
+        font-size: 160%;
       }
     }
 

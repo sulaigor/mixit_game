@@ -1,0 +1,8 @@
+@import "replace";
+
+@function delete-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    $number: str-replace(#{$number}, unit($number));
+  }
+  @return $number;
+}

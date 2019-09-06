@@ -1,8 +1,5 @@
-'use strict';
-
+import '../scss/base.scss';
 import Menu from "./classes/menu.js";
-// import Item from "./classes/item.js";
-// import CrackEgg from "./classes/crack_egg.js";
 
 let menu = new Menu('message-banner', 'controls-banner');
 let itemsTypes = 'egg-1 egg-2 egg-3 egg-4 egg-5 egg-6 egg-7'.split(' ');

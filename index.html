@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mixit game</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
   <script defer type="module" src="js/app.js"></script>
 </head>
 
@@ -79,49 +78,49 @@
 <div id="message-banner" class="banner active">
   <section class="banner-content">
     <div class="container">
-    <h1 class="main-headline">
-      <div class="firts-word">
-        <span class="orange">Mixit</span>&nbsp;
+      <h1 class="main-headline">
+        <div class="firts-word">
+          <span class="orange">Mixit</span>&nbsp;
+        </div>
+        <div class="second-word">
+          <span class="purple">H</span>
+          <span class="blue">r</span>
+          <span class="orange">a</span>
+        </div>
+      </h1>
+      <h1 class="main-headline game-over">
+        <div class="firts-word">
+          <span class="orange">Konec</span>&nbsp;
+        </div>
+        <div class="second-word">
+          <span class="purple">H</span>
+          <span class="blue">r</span>
+          <span class="orange">y</span>
+        </div>
+      </h1>
+      <div class="buttons">
+        <button id="start-btn" class="btn">
+          <span class="init-game">Start</span>
+          <span class="new-game">New game</span>
+        </button>
+        <button id="stop-btn" class="btn">Stop</button>
+        <button id="controls-btn" class="btn">Controls</button>
       </div>
-      <div class="second-word">
-        <span class="purple">H</span>
-        <span class="blue">r</span>
-        <span class="orange">a</span>
+      <div class="score-wrapper">
+        <h2>Dosažené skóre: <span class="score">0</span></h2>
+        <p id="discount-message">
+          <span class="enough">Skóre nad 1500</span>
+          <span class="not-enough">Skóre pod 1500</span>
+        </p>
       </div>
-    </h1>
-    <h1 class="main-headline game-over">
-      <div class="firts-word">
-        <span class="orange">Konec</span>&nbsp;
+      <div class="flags">
+        <a target="_blank" id="mixit-page-link" href="/">
+          Jít na <span>Mixit.cz</span>
+        </a>
+        <a target="_blank" id="easter-page-link" href="/velikonoce">
+          Jít na <span>Velikonoční Mixit</span>
+        </a>
       </div>
-      <div class="second-word">
-        <span class="purple">H</span>
-        <span class="blue">r</span>
-        <span class="orange">y</span>
-      </div>
-    </h1>
-    </div>
-    <div class="buttons">
-      <button id="start-btn" class="btn">
-        <span class="init-game">Start</span>
-        <span class="new-game">New game</span>
-      </button>
-      <button id="stop-btn" class="btn">Stop</button>
-      <button id="controls-btn" class="btn">Controls</button>
-    </div>
-    <div class="score-wrapper">
-      <h2><%= t(".your_score") %>: <span class="score">0</span></h2>
-      <p id="discount-message">
-        <span class="enough"><%= t('.enough') %></span>
-        <span class="not-enough"><%= t('.not_enough') %></span>
-      </p>
-    </div>
-    <div class="flags">
-      <a target="_blank" id="mixit-page-link" href="/">
-        Jít na <span>Mixit.cz</span>
-      </a>
-      <a target="_blank" id="easter-page-link" href="/velikonoce">
-        Jít na <span>Velikonoční Mixit</span>
-      </a>
     </div>
   </section>
 </div>

@@ -1,9 +1,15 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
+// variables
 @import "variables";
-@import "mixins/animation";
+
+//functions
+@import "functions/delete-unit";
+
+// mixins
 @import "mixins/item-position";
+@import "mixins/animation";
 @import "mixins/keyframes";
 @import "mixins/transform";
 @import "mixins/transition";
