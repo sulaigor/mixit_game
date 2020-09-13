@@ -2,4 +2,4 @@
 
 Mixit game releaved like april fool.
 
-You can [Play](https://www.mixit.cz/velikonocni-hra) it!
+You can play **[HERE](https://www.mixit.cz/velikonocni-hra)**!
